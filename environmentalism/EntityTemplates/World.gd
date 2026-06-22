@@ -1,7 +1,7 @@
 extends Node
 
-var current_enterprise
+@export var current_enterprise : Enterprise
 
-var ecosystem : int = 10000
+@export var ecosystem : int = 10000
 
 var events_pool : Array

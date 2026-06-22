@@ -1,14 +1,14 @@
-extends Node
+extends Resource
 class_name Enterprise
 
-var company_name : String
+@export var company_name : String
 
-var funds : float
-var manpower : int
-var environmental : int
-var social : int
-var governance : int
+@export var funds : float
+@export var manpower : int
+@export var environmental : int
+@export var social : int
+@export var governance : int
 
-var buildings : Array
-var construction_queue : Array
-var policies : Array
+@export var buildings : Array
+@export var construction_queue : Array
+@export var policies : Array
