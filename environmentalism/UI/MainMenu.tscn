@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://7pslt6kfcdw2"]
+
+[ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_uahxu"]
+
+[node name="Control" type="Control" unique_id=963972349]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_uahxu")
+
+[node name="GameName" type="Label" parent="." unique_id=189162882]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033333335
+anchor_top = 0.05925926
+anchor_right = 0.9668333
+anchor_bottom = 0.096
+offset_right = -0.3199997
+offset_bottom = 0.3199997
+theme_override_font_sizes/font_size = 80
+text = "Environmentalism"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameInfo" type="Label" parent="." unique_id=560963579]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033333335
+anchor_top = 0.28703707
+anchor_right = 0.96700007
+anchor_bottom = 0.33329636
+offset_right = -0.6401367
+offset_bottom = 0.039978027
+theme_override_font_sizes/font_size = 40
+text = "Environmentalism"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LoadGame" type="Button" parent="." unique_id=1419017554]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.35555556
+anchor_right = 0.66233337
+anchor_bottom = 0.43662962
+offset_right = 0.3199463
+offset_bottom = 0.44000244
+text = "TRLOADGAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGame" type="Button" parent="." unique_id=271542916]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.53333336
+anchor_right = 0.66233337
+anchor_bottom = 0.6144074
+offset_right = 0.3199463
+offset_bottom = 0.44000244
+text = "TRNEWGAME"
+metadata/_edit_use_anchors_ = true
+
+[node name="LanguageSelect" type="Button" parent="." unique_id=380272018]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.7111111
+anchor_right = 0.66233337
+anchor_bottom = 0.7921852
+offset_right = 0.3199463
+offset_bottom = 0.44000244
+text = "TRLANGUAGESELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="LanguageSelectPopup" type="Panel" parent="." unique_id=1492230638]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.17777778
+anchor_right = 0.98766667
+anchor_bottom = 0.9481111
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="LanguageSelectPopup" unique_id=24244417]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.7933884
+anchor_right = 0.8074188
+anchor_bottom = 0.89229757
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TRBACK
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="English" type="Button" parent="LanguageSelectPopup" unique_id=1861869995]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12820514
+anchor_top = 0.07692308
+anchor_right = 0.8715214
+anchor_bottom = 0.3073846
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "English
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Russian" type="Button" parent="LanguageSelectPopup" unique_id=1116441344]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12820514
+anchor_top = 0.3846154
+anchor_right = 0.8715214
+anchor_bottom = 0.60546154
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "Русский"
+metadata/_edit_use_anchors_ = true
+
+[node name="NewGamePopup" type="Panel" parent="." unique_id=749873233]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.17777778
+anchor_right = 0.98766667
+anchor_bottom = 0.9481111
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+metadata/_edit_use_anchors_ = true
+
+[node name="Back" type="Button" parent="NewGamePopup" unique_id=1965242383]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.7933884
+anchor_right = 0.8074188
+anchor_bottom = 0.89229757
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TRBACK
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Back2" type="Button" parent="NewGamePopup" unique_id=1674666220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15811966
+anchor_top = 0.61538464
+anchor_right = 0.84160686
+anchor_bottom = 0.7142938
+offset_right = 0.5119629
+offset_bottom = 0.25598145
+text = "TRSTART
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="MenuTitle" type="Label" parent="NewGamePopup" unique_id=709271650]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034188036
+anchor_top = 0.07692308
+anchor_right = 0.9661539
+anchor_bottom = 0.13697118
+offset_right = -0.6401367
+offset_bottom = 0.039978027
+theme_override_font_sizes/font_size = 40
+text = "TRNEWGAME"
+horizontal_alignment = 1
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CompanyName" type="Label" parent="NewGamePopup" unique_id=256399868]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034188036
+anchor_top = 0.23076923
+anchor_right = 0.9661539
+anchor_bottom = 0.30524042
+offset_right = -0.6401367
+offset_bottom = 0.039978027
+theme_override_font_sizes/font_size = 40
+text = "TRCOMPANYNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CompanyNameEnter" type="LineEdit" parent="NewGamePopup" unique_id=529558269]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12820514
+anchor_top = 0.31730768
+anchor_right = 0.87164104
+anchor_bottom = 0.53875
+offset_right = 0.28799438
+offset_bottom = -0.24000168
+theme_override_font_sizes/font_size = 56
+placeholder_text = "TRYOURCOMPANYNAME"
+alignment = 1
+max_length = 40
+metadata/_edit_use_anchors_ = true

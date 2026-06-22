@@ -1,0 +1,384 @@
+[gd_scene format=3 uid="uid://cm3iwaai2d8wm"]
+
+[ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_3y86k"]
+[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="2_svf8u"]
+
+[node name="GameMenu" type="Control" unique_id=131506874]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3y86k")
+
+[node name="Build" type="Button" parent="." unique_id=2056394106]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009739583
+anchor_top = 0.82831275
+anchor_right = 0.23300001
+anchor_bottom = 0.9478889
+offset_left = 5.299999
+offset_top = 1.4222221
+offset_right = 0.63998413
+offset_bottom = 0.27996826
+text = "TRBUILD"
+metadata/_edit_use_anchors_ = true
+
+[node name="Policies" type="Button" parent="." unique_id=675656073]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26390627
+anchor_top = 0.82831275
+anchor_right = 0.48716667
+anchor_bottom = 0.9478889
+offset_left = 5.299999
+offset_top = 1.4222412
+offset_right = 0.63998413
+offset_bottom = 0.27996826
+text = "TRPOLICIES"
+metadata/_edit_use_anchors_ = true
+
+[node name="Manpower" type="Button" parent="." unique_id=485950337]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.521
+anchor_top = 0.82831275
+anchor_right = 0.7413333
+anchor_bottom = 0.9480001
+offset_left = -0.32006836
+offset_top = 1.4222412
+offset_right = 0.64001465
+offset_bottom = 0.15991211
+text = "TRMANPOWER"
+metadata/_edit_use_anchors_ = true
+
+[node name="Turn" type="Button" parent="." unique_id=197139801]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8335
+anchor_top = 0.82831275
+anchor_right = 0.98716664
+anchor_bottom = 0.9480001
+offset_left = -0.32006836
+offset_top = 1.4222412
+offset_right = 0.64001465
+offset_bottom = 0.15991211
+text = "TRTURN"
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="SaveQuit" type="Button" parent="." unique_id=1900656569]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.022222223
+anchor_right = 0.23316666
+anchor_bottom = 0.081074074
+offset_right = 0.3199997
+offset_bottom = 0.43999958
+text = "TRSAVEQUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="CompanyName" type="Label" parent="." unique_id=656085319]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.73333335
+anchor_top = 0.022222223
+anchor_right = 0.9876667
+anchor_bottom = 0.08118519
+offset_right = -0.3200035
+offset_bottom = 0.31999588
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Indicators" type="RichTextLabel" parent="." unique_id=1515075929]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2375
+anchor_top = 0.022222223
+anchor_right = 0.72933334
+anchor_bottom = 0.08144444
+offset_right = -0.32000732
+offset_bottom = 0.040000916
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=152059593]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.11851852
+anchor_right = 0.98766667
+anchor_bottom = 0.77033335
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer" unique_id=540503472]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="EventPopup" type="Panel" parent="." unique_id=1757649917]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.08888889
+anchor_right = 0.98766667
+anchor_bottom = 0.98514813
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+metadata/_edit_use_anchors_ = true
+
+[node name="Event" type="Label" parent="EventPopup" unique_id=1964644159]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.03305785
+anchor_right = 0.97900003
+anchor_bottom = 0.11100001
+offset_right = -0.68811035
+offset_bottom = -25.448006
+theme_override_font_sizes/font_size = 60
+text = "TREVENT"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EventName" type="Label" parent="EventPopup" unique_id=430110128]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021000002
+anchor_top = 0.11570248
+anchor_right = 0.97900003
+anchor_bottom = 0.193
+offset_left = 0.6879959
+offset_right = -0.68811035
+offset_bottom = 0.17599487
+theme_override_font_sizes/font_size = 48
+text = "SAMPLENAME"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EventImage" type="TextureRect" parent="EventPopup" unique_id=672709510]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.20661157
+anchor_right = 0.978265
+anchor_bottom = 0.42942974
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+texture = ExtResource("2_svf8u")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="EventPopup" unique_id=1889296110]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.446281
+anchor_right = 0.978265
+anchor_bottom = 0.83438843
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Ok" type="Button" parent="EventPopup" unique_id=346081033]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.8595041
+anchor_right = 0.8074188
+anchor_bottom = 0.95841324
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TROK"
+metadata/_edit_use_anchors_ = true
+
+[node name="ManpowerPopup" type="Panel" parent="." unique_id=799704903]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.08888889
+anchor_right = 0.98766667
+anchor_bottom = 0.98514813
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+metadata/_edit_use_anchors_ = true
+
+[node name="Manpower" type="Label" parent="ManpowerPopup" unique_id=304075655]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.03305785
+anchor_right = 0.97900003
+anchor_bottom = 0.11100001
+offset_right = -0.68811035
+offset_bottom = -25.448006
+theme_override_font_sizes/font_size = 60
+text = "TRMANPOWER"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="ManpowerPopup" unique_id=1949889704]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.16528925
+anchor_right = 0.978265
+anchor_bottom = 0.4996777
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+bbcode_enabled = true
+text = "TRMANPOWERDESCRIPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ok" type="Button" parent="ManpowerPopup" unique_id=241722548]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.7933884
+anchor_right = 0.8074188
+anchor_bottom = 0.89229757
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TROK"
+metadata/_edit_use_anchors_ = true
+
+[node name="CurrentManpower" type="Label" parent="ManpowerPopup" unique_id=925467746]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36324787
+anchor_top = 0.6280992
+anchor_right = 0.6363846
+anchor_bottom = 0.70282644
+offset_right = 0.6879959
+offset_bottom = -0.33600235
+text = "100000/10000"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="+1" type="Button" parent="ManpowerPopup" unique_id=2102132697]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6367521
+anchor_top = 0.6280992
+anchor_right = 0.67529917
+anchor_bottom = 0.702562
+offset_right = -0.16000366
+offset_bottom = -0.08000183
+text = "+1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="+10" type="Button" parent="ManpowerPopup" unique_id=1228555476]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6880342
+anchor_top = 0.6280992
+anchor_right = 0.7265812
+anchor_bottom = 0.702562
+offset_right = -0.16000366
+offset_bottom = -0.08000183
+text = "+10
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="+100" type="Button" parent="ManpowerPopup" unique_id=792877705]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7393162
+anchor_top = 0.6280992
+anchor_right = 0.7905471
+anchor_bottom = 0.702
+offset_right = 0.095825195
+offset_bottom = 0.46398926
+text = "+100
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="+1000" type="Button" parent="ManpowerPopup" unique_id=1940198821]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8034188
+anchor_top = 0.6280992
+anchor_right = 0.87200004
+anchor_bottom = 0.702
+offset_right = -0.3840332
+offset_bottom = 0.46398926
+text = "+1000
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="-1" type="Button" parent="ManpowerPopup" unique_id=863468587]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.32478634
+anchor_top = 0.6280992
+anchor_right = 0.36333334
+anchor_bottom = 0.702562
+offset_right = -0.16000366
+offset_bottom = -0.08000183
+text = "-1
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="-10" type="Button" parent="ManpowerPopup" unique_id=919915453]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2735043
+anchor_top = 0.6280992
+anchor_right = 0.3120513
+anchor_bottom = 0.702562
+offset_right = -0.16000366
+offset_bottom = -0.08000183
+text = "-10
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="-100" type="Button" parent="ManpowerPopup" unique_id=1133047394]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20940171
+anchor_top = 0.6280992
+anchor_right = 0.26063257
+anchor_bottom = 0.702
+offset_right = 0.095825195
+offset_bottom = 0.46398926
+text = "-100
+
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="-1000" type="Button" parent="ManpowerPopup" unique_id=1936541040]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.13247864
+anchor_top = 0.6280992
+anchor_right = 0.19646585
+anchor_bottom = 0.70223147
+offset_right = 0.21594238
+offset_bottom = 0.2399292
+text = "-1000
+
+"
+metadata/_edit_use_anchors_ = true
