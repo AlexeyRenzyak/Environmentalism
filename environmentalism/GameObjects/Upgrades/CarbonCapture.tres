@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://cp01enyyvewda"]
+
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="1_ov630"]
+
+[resource]
+script = ExtResource("1_ov630")
+upgrade_name = "Carbon Capture"
+cost = 200.0
+metadata/_custom_type_script = "uid://c5bdne40m38j2"

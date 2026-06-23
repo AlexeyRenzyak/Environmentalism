@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Enterprise" format=3 uid="uid://6n207hhfdumv"]
+
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="1_fq0c3"]
+[ext_resource type="Script" uid="uid://b4ukuehclx6r6" path="res://EntityTemplates/Enterprise.gd" id="1_vevoc"]
+
+[resource]
+script = ExtResource("1_vevoc")
+company_name = "TestName"
+metadata/_custom_type_script = "uid://b4ukuehclx6r6"

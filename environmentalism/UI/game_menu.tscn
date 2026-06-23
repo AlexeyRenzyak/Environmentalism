@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cm3iwaai2d8wm"]
 
 [ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_3y86k"]
+[ext_resource type="Script" uid="uid://bf38cvfebelfg" path="res://UI/game_menu.gd" id="2_aroug"]
 [ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="2_svf8u"]
+[ext_resource type="Script" uid="uid://ixlmfoqg2k2c" path="res://UI/building_choice_popup.gd" id="3_aroug"]
+[ext_resource type="Script" uid="uid://dufwevt4npf34" path="res://UI/building_management_popup.gd" id="3_y331g"]
 
 [node name="GameMenu" type="Control" unique_id=131506874]
 layout_mode = 3
@@ -11,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3y86k")
+script = ExtResource("2_aroug")
 
 [node name="Build" type="Button" parent="." unique_id=2056394106]
 layout_mode = 1
@@ -98,22 +102,21 @@ metadata/_edit_use_anchors_ = true
 [node name="Indicators" type="RichTextLabel" parent="." unique_id=1515075929]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.2375
-anchor_top = 0.022222223
-anchor_right = 0.72933334
-anchor_bottom = 0.08144444
+anchor_left = 0.0125
+anchor_top = 0.11851852
+anchor_right = 0.2585
+anchor_bottom = 0.7777408
 offset_right = -0.32000732
 offset_bottom = 0.040000916
-theme_override_font_sizes/normal_font_size = 34
+theme_override_constants/line_separation = 50
+theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=152059593]
+[node name="BuildingList" type="ScrollContainer" parent="." unique_id=152059593]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0125
+anchor_left = 0.29583332
 anchor_top = 0.11851852
 anchor_right = 0.98766667
 anchor_bottom = 0.77033335
@@ -122,12 +125,180 @@ offset_bottom = 0.040000916
 horizontal_scroll_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="HFlowContainer" type="HFlowContainer" parent="ScrollContainer" unique_id=540503472]
+[node name="HFlowContainer" type="HFlowContainer" parent="BuildingList" unique_id=540503472]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingChoicePopup" type="Panel" parent="." unique_id=884261959]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.08888889
+anchor_right = 0.98766667
+anchor_bottom = 0.98514813
+offset_right = -0.3199463
+offset_bottom = 0.040039063
+script = ExtResource("3_aroug")
+metadata/_edit_use_anchors_ = true
+
+[node name="Funds" type="RichTextLabel" parent="BuildingChoicePopup" unique_id=1504328169]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.10743801
+anchor_right = 0.97880346
+anchor_bottom = 0.17351241
+offset_right = -0.32000732
+offset_bottom = 0.039978027
+theme_override_constants/line_separation = 50
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingChoice" type="Label" parent="BuildingChoicePopup" unique_id=1272155360]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.03305785
+anchor_right = 0.97900003
+anchor_bottom = 0.11100001
+offset_right = -0.68811035
+offset_bottom = -25.448006
+theme_override_font_sizes/font_size = 60
+text = "TRBUILDINGCHOICE"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingChooser" type="ScrollContainer" parent="BuildingChoicePopup" unique_id=17260806]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.012820513
+anchor_top = 0.23140496
+anchor_right = 0.9876666
+anchor_bottom = 0.77033335
+offset_right = -0.3199463
+offset_bottom = 0.039978027
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BuildingChoicePopup/BuildingChooser" unique_id=2100557775]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Ok" type="Button" parent="BuildingChoicePopup" unique_id=865841269]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.8595041
+anchor_right = 0.8074188
+anchor_bottom = 0.95841324
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TROK"
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingManagementPopup" type="Panel" parent="." unique_id=610710245]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.08888889
+anchor_right = 0.98766667
+anchor_bottom = 0.98514813
+offset_right = -0.3199463
+offset_bottom = 0.040039063
+script = ExtResource("3_y331g")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingManagement" type="Label" parent="BuildingManagementPopup" unique_id=716724604]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.03305785
+anchor_right = 0.97900003
+anchor_bottom = 0.11100001
+offset_right = -0.68811035
+offset_bottom = -25.448006
+theme_override_font_sizes/font_size = 60
+text = "TRBUILDINGMANAGEMENT"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingName" type="Label" parent="BuildingManagementPopup" unique_id=86664126]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021000002
+anchor_top = 0.11570248
+anchor_right = 0.97900003
+anchor_bottom = 0.193
+offset_left = 0.6879959
+offset_right = -0.68811035
+offset_bottom = 0.17599487
+theme_override_font_sizes/font_size = 48
+text = "SAMPLENAME"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EventImage" type="TextureRect" parent="BuildingManagementPopup" unique_id=478720239]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.20661157
+anchor_right = 0.978265
+anchor_bottom = 0.36331403
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+texture = ExtResource("2_svf8u")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Effects" type="RichTextLabel" parent="BuildingManagementPopup" unique_id=107639523]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.59504133
+anchor_right = 0.978265
+anchor_bottom = 0.82612395
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ok" type="Button" parent="BuildingManagementPopup" unique_id=678474352]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.8595041
+anchor_right = 0.8074188
+anchor_bottom = 0.95841324
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TROK"
+metadata/_edit_use_anchors_ = true
+
+[node name="Upgrades" type="HBoxContainer" parent="BuildingManagementPopup" unique_id=1609599366]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.38842976
+anchor_right = 0.978265
+anchor_bottom = 0.5616611
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+theme_override_constants/separation = 20
+alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="EventPopup" type="Panel" parent="." unique_id=1757649917]
@@ -181,6 +352,7 @@ anchor_bottom = 0.42942974
 offset_right = 0.6879959
 offset_bottom = 0.31200027
 texture = ExtResource("2_svf8u")
+expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
@@ -382,3 +554,8 @@ text = "-1000
 
 "
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Build" to="." method="_on_build_pressed"]
+[connection signal="pressed" from="Turn" to="." method="_on_turn_pressed"]
+[connection signal="pressed" from="BuildingChoicePopup/Ok" to="BuildingChoicePopup" method="_on_ok_pressed"]
+[connection signal="pressed" from="BuildingManagementPopup/Ok" to="BuildingManagementPopup" method="_on_ok_pressed"]

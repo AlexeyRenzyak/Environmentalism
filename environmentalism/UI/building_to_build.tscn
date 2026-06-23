@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://cwpylqqtjhvpv"]
+
+[ext_resource type="Script" uid="uid://inhyy1tq4svh" path="res://UI/building_to_build.gd" id="1_vq4k2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aroug"]
+bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+
+[node name="BuildingToBuild" type="Panel" unique_id=37405004]
+custom_minimum_size = Vector2(0, 120)
+theme_override_styles/panel = SubResource("StyleBoxFlat_aroug")
+script = ExtResource("1_vq4k2")
+
+[node name="Image" type="TextureRect" parent="." unique_id=1918671606]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004385965
+anchor_top = 0.11061732
+anchor_right = 0.14042105
+anchor_bottom = 0.910284
+offset_right = -0.12800217
+offset_bottom = 0.040000916
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1821293297]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7105263
+anchor_top = 0.0022839864
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = 0.034072876
+text = "TRACTIONBUILD"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1517998704]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1491228
+anchor_top = 0.11061732
+anchor_right = 0.3597193
+anchor_bottom = 0.9109507
+offset_right = -0.12800217
+offset_bottom = -0.04000473
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Effects" type="RichTextLabel" parent="." unique_id=1744211210]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37280703
+anchor_top = 0.10743801
+anchor_right = 0.70192987
+anchor_bottom = 0.9080003
+offset_right = -0.32000732
+offset_bottom = 0.039978027
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

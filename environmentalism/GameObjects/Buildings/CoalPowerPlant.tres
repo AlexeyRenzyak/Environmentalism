@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://bc0sgm1g1rwbi"]
+
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="1_0mdwh"]
+[ext_resource type="Texture2D" uid="uid://chaxu2cen1w0g" path="res://Images/Buildings/catazul-power-plant-6807566.jpg" id="1_w7fdh"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="2_w7fdh"]
+
+[sub_resource type="Resource" id="Resource_w7fdh"]
+script = ExtResource("2_w7fdh")
+upgrade_name = "Carbon Capture"
+cost = 200.0
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_8noh6"]
+script = ExtResource("2_w7fdh")
+upgrade_name = "New Power Block"
+cost = 150.0
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("1_0mdwh")
+building_name = "Coal Power Plant"
+image = ExtResource("1_w7fdh")
+cost = 1000.0
+base_construction_time = 5
+upgrades = Array[ExtResource("2_w7fdh")]([SubResource("Resource_w7fdh"), SubResource("Resource_8noh6")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

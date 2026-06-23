@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://b8j5lm4fijnva"]
+
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="1_xnoe8"]
+
+[resource]
+script = ExtResource("1_xnoe8")
+upgrade_name = "New Power Block"
+cost = 150.0
+metadata/_custom_type_script = "uid://c5bdne40m38j2"

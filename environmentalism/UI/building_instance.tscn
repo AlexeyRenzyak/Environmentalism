@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dc8lij7rnjf8x"]
+
+[ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_sk068"]
+[ext_resource type="Script" uid="uid://c2kgwxl7roo35" path="res://UI/building_instance.gd" id="3_vfwym"]
+
+[node name="BuildingInstance" type="Button" unique_id=2143473880]
+custom_minimum_size = Vector2(256, 256)
+anchors_preset = -1
+anchor_right = 0.133
+anchor_bottom = 0.23700002
+offset_right = -255.36
+offset_bottom = -255.96002
+theme = ExtResource("1_sk068")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+script = ExtResource("3_vfwym")
+
+[node name="NotBuilt" type="ColorRect" parent="." unique_id=219909102]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99975
+anchor_bottom = 0.99975
+offset_right = 0.063999176
+offset_bottom = 0.063999176
+color = Color(0, 0, 0, 0.8156863)
+metadata/_edit_use_anchors_ = true
+
+[node name="Counter" type="Label" parent="NotBuilt" unique_id=1068667591]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99975
+anchor_bottom = 1.0001563
+offset_right = 0.063999176
+offset_bottom = -0.040000916
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

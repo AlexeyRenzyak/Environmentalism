@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cyn16vfiep1uo"]
+
+[ext_resource type="Script" uid="uid://p33fudqdo2b" path="res://UI/upgrade.gd" id="1_aqegd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kxuq"]
+bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+
+[node name="Upgrade" type="Panel" unique_id=548887356]
+custom_minimum_size = Vector2(300, 64)
+anchors_preset = -1
+anchor_right = 0.156
+anchor_bottom = 0.119
+offset_right = 0.47998047
+offset_bottom = -0.5200043
+theme_override_styles/panel = SubResource("StyleBoxFlat_4kxuq")
+script = ExtResource("1_aqegd")
+
+[node name="Text" type="RichTextLabel" parent="." unique_id=99714676]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019999927
+anchor_top = 0.06250018
+anchor_right = 0.97689736
+anchor_bottom = 0.7124287
+offset_left = 2.193451e-05
+offset_top = -2.2888184e-05
+offset_right = 0.6880188
+offset_bottom = 0.3119812
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1658472110]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.6875
+anchor_right = 1.0003333
+anchor_bottom = 1.0005
+offset_right = -0.10000038
+offset_bottom = -0.06400013
+theme_override_font_sizes/font_size = 19
+text = "Install"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
