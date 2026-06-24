@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://bbdj068ije5li"]
+
+[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="1_eumct"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="1_uayse"]
+
+[resource]
+script = ExtResource("1_uayse")
+policy_name = "Extended Shifts"
+image = ExtResource("1_eumct")
+cost = 500.0
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

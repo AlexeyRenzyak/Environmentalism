@@ -43,3 +43,9 @@ func _on_turn_pressed() -> void:
 	World.current_enterprise.next_turn()
 	reload()
 	pass # Replace with function body.
+
+
+func _on_policies_pressed() -> void:
+	$PoliciesChoicePopup.reload()
+	$PoliciesChoicePopup.visible = true
+	pass # Replace with function body.

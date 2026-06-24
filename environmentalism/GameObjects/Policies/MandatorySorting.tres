@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://b2sgtpyy5017i"]
+
+[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="1_mtue3"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_onh2y"]
+
+[resource]
+script = ExtResource("2_onh2y")
+policy_name = "Mandatory Waste Sorting"
+image = ExtResource("1_mtue3")
+cost = 750.0
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

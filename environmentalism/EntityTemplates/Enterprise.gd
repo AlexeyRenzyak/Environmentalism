@@ -12,7 +12,9 @@ class_name Enterprise
 
 @export var buildings : Array[Building]
 @export var construction_queue : Array[Building]
-@export var policies : Array
+@export var policies : Array[Policy]
+
+@export var events_to_process : Array[Event] 
 
 func next_turn():
 	var counter = 0

@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://w73cmvuw1ji0"]
+
+[ext_resource type="Script" uid="uid://bplkljln27bi7" path="res://UI/policy_to_enact.gd" id="1_kq28q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aroug"]
+bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
+
+[node name="PolicyToEnact" type="Panel" unique_id=1210832431]
+custom_minimum_size = Vector2(0, 180)
+theme_override_styles/panel = SubResource("StyleBoxFlat_aroug")
+script = ExtResource("1_kq28q")
+
+[node name="Image" type="TextureRect" parent="." unique_id=409139875]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004385965
+anchor_top = 0.11061732
+anchor_right = 0.14042105
+anchor_bottom = 0.910284
+offset_right = -0.12800217
+offset_bottom = 0.040000916
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=508000868]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7105263
+anchor_top = 0.0022839864
+anchor_right = 1.0
+anchor_bottom = 1.0020001
+offset_bottom = 0.034072876
+text = "TRACTIONENACT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1197991130]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1491228
+anchor_top = 0.11061732
+anchor_right = 0.3597193
+anchor_bottom = 0.9109507
+offset_right = -0.12800217
+offset_bottom = -0.04000473
+theme_override_font_sizes/font_size = 34
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Effects" type="RichTextLabel" parent="." unique_id=1974456617]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.37280703
+anchor_top = 0.10743801
+anchor_right = 0.70192987
+anchor_bottom = 0.9080003
+offset_right = -0.32000732
+offset_bottom = 0.039978027
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
