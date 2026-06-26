@@ -19,7 +19,7 @@ func _ready() -> void:
 		modulate = Color(1,1,1)
 		$Button.text = tr("TRACTIONENACT")
 	$Image.texture = policy.image
-	$Label.text = policy.policy_name
+	$Label.text = tr(policy.policy_name)
 	$Effects.text += "Cost - " + str(policy.cost)
 
 

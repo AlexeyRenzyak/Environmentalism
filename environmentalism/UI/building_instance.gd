@@ -4,7 +4,7 @@ var building : Building
 
 func _ready() -> void:
 	icon = building.image
-	text = building.building_name
+	text = tr(building.building_name)
 	if building.construction_time != 0:
 		$NotBuilt.visible = true
 		$NotBuilt/Counter.text = str(building.construction_time)

@@ -10,7 +10,7 @@ func reload() -> void:
 	if upgrade.is_installed:
 		$Text.text += "Installed\n"
 		$Button.visible = false
-	$Text.text += upgrade.upgrade_name
+	$Text.text += tr(upgrade.upgrade_name)
 
 func _on_button_pressed() -> void:
 	upgrade.is_installed = true

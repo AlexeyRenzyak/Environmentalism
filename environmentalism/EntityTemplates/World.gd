@@ -17,4 +17,5 @@ var policies_pool : Array[Policy] = [
 
 #TEST
 func _ready() -> void:
+	randomize()
 	current_enterprise = load("res://GameObjects/TestEnterprise.tres")

@@ -18,6 +18,14 @@ func reload():
 		i.building = x
 		$BuildingList/HFlowContainer.add_child(i)
 	
+	if World.current_enterprise.events_to_process.size() > 0:
+		$EventPopup.visible = true
+		$EventPopup/EventName.text = tr(World.current_enterprise.events_to_process[0].event_name)
+		$EventPopup/EventImage.texture = World.current_enterprise.events_to_process[0].image
+		$EventPopup/Description.text = tr(World.current_enterprise.events_to_process[0].description)
+	else:
+		$EventPopup.visible = false
+	
 	$Indicators.text = ""
 	
 	$Indicators.text += "[color=gold]Funds - " + str(World.current_enterprise.funds) + "[/color]"
@@ -48,4 +56,10 @@ func _on_turn_pressed() -> void:
 func _on_policies_pressed() -> void:
 	$PoliciesChoicePopup.reload()
 	$PoliciesChoicePopup.visible = true
+	pass # Replace with function body.
+
+
+func _on_ok_pressed() -> void:
+	World.current_enterprise.handle_event_effects()
+	reload()
 	pass # Replace with function body.

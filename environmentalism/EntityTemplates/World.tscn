@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://brka4osuti3pe"]
+
+[ext_resource type="Script" uid="uid://cv8wfe0pjtegr" path="res://EntityTemplates/World.gd" id="1_mkckj"]
+[ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_4lskp"]
+
+[sub_resource type="Resource" id="Resource_mkckj"]
+script = ExtResource("2_4lskp")
+event_name = "Test1"
+description = "10"
+family = "T"
+conditions = Array[String](["RAND = 50"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"
+
+[sub_resource type="Resource" id="Resource_at4jw"]
+script = ExtResource("2_4lskp")
+event_name = "Test2"
+description = "20"
+family = "T"
+conditions = Array[String](["RAND = 20"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"
+
+[sub_resource type="Resource" id="Resource_4lskp"]
+script = ExtResource("2_4lskp")
+event_name = "Test3"
+description = "30"
+family = "T"
+conditions = Array[String](["RAND = 30"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"
+
+[sub_resource type="Resource" id="Resource_5y4mk"]
+script = ExtResource("2_4lskp")
+event_name = "TEST4"
+description = "AAA"
+family = "A"
+conditions = Array[String](["RAND = 50"])
+metadata/_custom_type_script = "uid://cveydjdjl1j67"
+
+[node name="World" type="Node" unique_id=692358356]
+script = ExtResource("1_mkckj")
+events_pool = Array[ExtResource("2_4lskp")]([SubResource("Resource_mkckj"), SubResource("Resource_at4jw"), SubResource("Resource_4lskp"), SubResource("Resource_5y4mk")])

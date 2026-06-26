@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-World="*uid://cv8wfe0pjtegr"
+World="*uid://brka4osuti3pe"
 
 [display]
 
