@@ -71,6 +71,7 @@ offset_top = 1.4222412
 offset_right = 0.64001465
 offset_bottom = 0.15991211
 text = "TRTURN"
+autowrap_mode = 2
 clip_text = true
 metadata/_edit_use_anchors_ = true
 

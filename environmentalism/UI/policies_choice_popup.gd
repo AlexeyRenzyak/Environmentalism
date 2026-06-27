@@ -5,7 +5,7 @@ var policy_to_enact = preload("res://UI/policy_to_enact.tscn")
 func reload():
 	for x in $PoliciesChooser/VBoxContainer.get_children():
 		x.free()
-	$Funds.text = "[color=gold]Funds - " + str(World.current_enterprise.funds) + "[/color]"
+	$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
 	for x in World.policies_pool:
 		var i = policy_to_enact.instantiate()
 		i.policy = x

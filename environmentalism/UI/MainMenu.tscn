@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://7pslt6kfcdw2"]
 
 [ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_uahxu"]
+[ext_resource type="Script" uid="uid://ri6l4sqx3dr8" path="res://UI/main_menu.gd" id="2_b37jj"]
 
-[node name="Control" type="Control" unique_id=963972349]
+[node name="MainMenu" type="Control" unique_id=963972349]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uahxu")
+script = ExtResource("2_b37jj")
 
 [node name="GameName" type="Label" parent="." unique_id=189162882]
 layout_mode = 1
@@ -97,8 +99,7 @@ anchor_right = 0.8074188
 anchor_bottom = 0.89229757
 offset_right = 0.5119996
 offset_bottom = 0.25599957
-text = "TRBACK
-"
+text = "TRBACK"
 metadata/_edit_use_anchors_ = true
 
 [node name="English" type="Button" parent="LanguageSelectPopup" unique_id=1861869995]
@@ -209,3 +210,9 @@ placeholder_text = "TRYOURCOMPANYNAME"
 alignment = 1
 max_length = 40
 metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="LanguageSelect" to="." method="_on_language_select_pressed"]
+[connection signal="pressed" from="LanguageSelectPopup/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LanguageSelectPopup/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="LanguageSelectPopup/Russian" to="." method="_on_russian_pressed"]

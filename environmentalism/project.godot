@@ -34,6 +34,12 @@ enabled=PackedStringArray("res://addons/godot_object_serializer/plugin.cfg")
 
 pointing/emulate_touch_from_mouse=true
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://Localization/stringlocalization.en.translation", "res://Localization/stringlocalization.ru.translation")
+locale/test="en"
+locale/locale_filter_mode=0
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

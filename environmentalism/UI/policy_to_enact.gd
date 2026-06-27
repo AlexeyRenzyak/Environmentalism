@@ -20,7 +20,7 @@ func _ready() -> void:
 		$Button.text = tr("TRACTIONENACT")
 	$Image.texture = policy.image
 	$Label.text = tr(policy.policy_name)
-	$Effects.text += "Cost - " + str(policy.cost)
+	$Effects.text += tr("TRCOST")+ " - " + str(policy.cost)
 
 
 

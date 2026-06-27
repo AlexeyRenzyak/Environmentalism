@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://c5bdne40m38j2"
 
 [resource]
 script = ExtResource("1_0mdwh")
-building_name = "Coal Power Plant"
+building_name = "TRCOALPOWERPLANT"
 image = ExtResource("1_w7fdh")
 cost = 1000.0
 base_construction_time = 5

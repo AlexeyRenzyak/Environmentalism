@@ -28,12 +28,12 @@ func reload():
 	
 	$Indicators.text = ""
 	
-	$Indicators.text += "[color=gold]Funds - " + str(World.current_enterprise.funds) + "[/color]"
-	$Indicators.text += "[color=blue] \nMPower - " + str(World.current_enterprise.manpower)+"/"+"NEEDED"+ "[/color]"
-	$Indicators.text += "[color=green] \nENV - " + str(World.current_enterprise.environmental) + "[/color]"
-	$Indicators.text += "[color=cyan] \nSOC - " + str(World.current_enterprise.social) + "[/color]"
-	$Indicators.text += "[color=white] \nGOV - " + str(World.current_enterprise.governance) + "[/color]"
-	$Indicators.text += "[color=lightgreen] \nECO - " + str(World.ecosystem) + "[/color]"
+	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
+	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+"NEEDED"+ "[/color]"
+	$Indicators.text += "[color=green] \n" + tr("TRENV") + " - " + str(World.current_enterprise.environmental) + "[/color]"
+	$Indicators.text += "[color=cyan] \n" + tr("TRSOC") + " - " + str(World.current_enterprise.social) + "[/color]"
+	$Indicators.text += "[color=white] \n" + tr("TRGOV") + " - " + str(World.current_enterprise.governance) + "[/color]"
+	$Indicators.text += "[color=lightgreen] \n" + tr("TRECO") + " - " + str(World.ecosystem) + "[/color]"
 		
 func open_building_menu(building:Building):
 	$BuildingManagementPopup.building = building

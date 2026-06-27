@@ -1,0 +1,29 @@
+keys,en,ru
+TRLOADGAME,Load Game,Загрузить игру
+TRNEWGAME,New Game,Новая игра
+TRLANGUAGESELECT,Change Language,Сменить язык
+TRSAVEQUIT,Save and Quit,Сохранить и выйти
+TRBUILD,Build,Строительство
+TRPOLICIES,Policies,Политики
+TRMANPOWER,Manpower,Рабочая сила,
+TRTURN,Next Turn,Следующий ход
+TRPOLICIESCHOICE,Policies Choice,Выбор политик
+TROK,Ok,Принять
+TRFUNDS,Funds,Финансы
+TRMPOWER,MPOWER,Р. Сила
+TRENV,ENV,ОКР
+TRSOC,SOC,СОЦ
+TRGOV,GOV,УПР
+TRECO,ECO,ЭКО
+TRBUILDINGCHOICE,Buildings Choice,Выбор зданий
+TRBUILDINGMANAGEMENT,Building Management,Управление зданием
+TREVENT,Event,Событие
+TRMANPOWER,Manpower,Рабочая сила
+TRMANPOWERDESCRIPTION,"Manpower is the number of people required to run your company in total. In order to hire new employees, you need to pay a fee in Funds, dependent on your SOC. Manpower also requires a Funds upkeep. Lack of manpower will linearly reduce the effects of all buildings.","Рабочая сила - это общее количество человек, необходимое для поддержания работы Вашей компании. Для ее найма придется оплатить расходы в Финансах в зависимости от вашей СОЦ. Также работники требуют содержания в Финансах. Отсутствие рабочей силы линейно снижает эффекты всех построек."
+TRCOST,Cost,Цена
+TRINSTALLED,Installed,Установлено
+TRBACK,Back,Назад
+TRCOALPOWERPLANT,Coal Power Plant,Угольная электростанция
+TRACTIONBUILD,Build,Построить
+TRACTIONENACT,Enact,Принять
+TRACTIONUNENACT,Unenact,Отменить
