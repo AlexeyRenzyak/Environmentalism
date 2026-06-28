@@ -8,4 +8,5 @@ script = ExtResource("2_onh2y")
 policy_name = "Mandatory Waste Sorting"
 image = ExtResource("1_mtue3")
 cost = 750.0
+effects = Array[String](["environmental -* -0.2", "funds +* -0.3"])
 metadata/_custom_type_script = "uid://dixhvcvxrvqec"

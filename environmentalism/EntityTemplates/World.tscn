@@ -8,8 +8,8 @@ script = ExtResource("2_4lskp")
 event_name = "Test1"
 description = "10"
 family = "T"
+effects = Array[String](["funds + 100"])
 conditions = Array[String](["RAND = 50"])
-may_apply_tier_down = false
 metadata/_custom_type_script = "uid://cveydjdjl1j67"
 
 [sub_resource type="Resource" id="Resource_at4jw"]
@@ -17,8 +17,8 @@ script = ExtResource("2_4lskp")
 event_name = "Test2"
 description = "20"
 family = "T"
+effects = Array[String](["funds + 200"])
 conditions = Array[String](["RAND = 20"])
-may_apply_tier_down = false
 metadata/_custom_type_script = "uid://cveydjdjl1j67"
 
 [sub_resource type="Resource" id="Resource_4lskp"]
@@ -26,16 +26,16 @@ script = ExtResource("2_4lskp")
 event_name = "Test3"
 description = "30"
 family = "T"
+effects = Array[String](["funds + 300"])
 conditions = Array[String](["RAND = 30"])
-may_apply_tier_down = false
 metadata/_custom_type_script = "uid://cveydjdjl1j67"
 
 [sub_resource type="Resource" id="Resource_5y4mk"]
 script = ExtResource("2_4lskp")
-event_name = "TEST4"
+event_name = "BAD ECOSYSTEM!!!"
 description = "AAA"
 family = "A"
-conditions = Array[String](["RAND = 50"])
+conditions = Array[String](["RAND = 100", "ecosystem < 5000"])
 metadata/_custom_type_script = "uid://cveydjdjl1j67"
 
 [node name="World" type="Node" unique_id=692358356]

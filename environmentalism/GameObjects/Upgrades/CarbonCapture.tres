@@ -6,4 +6,5 @@
 script = ExtResource("1_ov630")
 upgrade_name = "Carbon Capture"
 cost = 200.0
+effects = Array[String](["funds - 50", "environmental + 150"])
 metadata/_custom_type_script = "uid://c5bdne40m38j2"

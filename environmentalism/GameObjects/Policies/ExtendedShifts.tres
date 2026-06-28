@@ -8,4 +8,5 @@ script = ExtResource("1_uayse")
 policy_name = "Extended Shifts"
 image = ExtResource("1_eumct")
 cost = 500.0
+effects = Array[String](["funds +* 0.5", "social -* 1"])
 metadata/_custom_type_script = "uid://dixhvcvxrvqec"

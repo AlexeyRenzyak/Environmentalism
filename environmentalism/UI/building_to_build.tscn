@@ -6,7 +6,7 @@
 bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
 
 [node name="BuildingToBuild" type="Panel" unique_id=37405004]
-custom_minimum_size = Vector2(0, 120)
+custom_minimum_size = Vector2(0, 230)
 theme_override_styles/panel = SubResource("StyleBoxFlat_aroug")
 script = ExtResource("1_vq4k2")
 

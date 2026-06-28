@@ -8,6 +8,7 @@
 script = ExtResource("2_w7fdh")
 upgrade_name = "Carbon Capture"
 cost = 200.0
+effects = Array[String](["environmental + 150", "funds - 50"])
 metadata/_custom_type_script = "uid://c5bdne40m38j2"
 
 [sub_resource type="Resource" id="Resource_8noh6"]
@@ -22,5 +23,6 @@ building_name = "TRCOALPOWERPLANT"
 image = ExtResource("1_w7fdh")
 cost = 1000.0
 base_construction_time = 5
+effects = Array[String](["funds + 250", "governance - 100", "environmental - 200", "social - 50"])
 upgrades = Array[ExtResource("2_w7fdh")]([SubResource("Resource_w7fdh"), SubResource("Resource_8noh6")])
 metadata/_custom_type_script = "uid://c2c7day2rt4xc"

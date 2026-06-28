@@ -15,7 +15,7 @@ offset_bottom = -0.5200043
 theme_override_styles/panel = SubResource("StyleBoxFlat_4kxuq")
 script = ExtResource("1_aqegd")
 
-[node name="Text" type="RichTextLabel" parent="." unique_id=99714676]
+[node name="Effects" type="RichTextLabel" parent="." unique_id=99714676]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.019999927

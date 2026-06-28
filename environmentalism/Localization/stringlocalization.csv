@@ -27,3 +27,8 @@ TRCOALPOWERPLANT,Coal Power Plant,Угольная электростанция
 TRACTIONBUILD,Build,Построить
 TRACTIONENACT,Enact,Принять
 TRACTIONUNENACT,Unenact,Отменить
+TRWILLBE,Will be,Будет
+TRGAIN,Gain,Получение
+TRUPKEEP,Upkeep,Содержание
+TRPOSITIVE,Positive Modifiers,Положительные модификаторы
+TRNEGATIVE,Negative Modifiers,Негативные модификаторы

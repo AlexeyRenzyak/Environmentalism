@@ -11,6 +11,9 @@ func reload():
 		i.policy = x
 		$PoliciesChooser/VBoxContainer.add_child(i)
 		
+func _process(delta: float) -> void:
+	if visible:
+		$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
 
 
 func _on_ok_pressed() -> void:

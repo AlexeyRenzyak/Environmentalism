@@ -111,7 +111,7 @@ anchor_bottom = 0.7777408
 offset_right = -0.32000732
 offset_bottom = 0.040000916
 theme_override_constants/line_separation = 50
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 metadata/_edit_use_anchors_ = true
 
@@ -308,6 +308,23 @@ text = "TRBUILDINGMANAGEMENT"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="Funds" type="RichTextLabel" parent="BuildingManagementPopup" unique_id=163677954]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7863248
+anchor_top = 0.016528925
+anchor_right = 0.991624
+anchor_bottom = 0.08260333
+offset_right = -0.32006836
+offset_bottom = 0.039978027
+theme_override_constants/line_separation = 50
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="BuildingName" type="Label" parent="BuildingManagementPopup" unique_id=86664126]
 layout_mode = 1
 anchors_preset = -1
@@ -341,14 +358,14 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.021367522
-anchor_top = 0.59504133
+anchor_top = 0.6446281
 anchor_right = 0.978265
 anchor_bottom = 0.82612395
 offset_right = 0.6879959
 offset_bottom = 0.31200027
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 horizontal_alignment = 1
-vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ok" type="Button" parent="BuildingManagementPopup" unique_id=678474352]
@@ -369,7 +386,7 @@ anchors_preset = -1
 anchor_left = 0.021367522
 anchor_top = 0.38842976
 anchor_right = 0.978265
-anchor_bottom = 0.5616611
+anchor_bottom = 0.6360413
 offset_right = 0.6879959
 offset_bottom = 0.31200027
 theme_override_constants/separation = 20
@@ -441,6 +458,7 @@ anchor_bottom = 0.83438843
 offset_right = 0.6879959
 offset_bottom = 0.31200027
 bbcode_enabled = true
+horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Ok" type="Button" parent="EventPopup" unique_id=346081033]

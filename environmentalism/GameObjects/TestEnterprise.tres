@@ -2,8 +2,12 @@
 
 [ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="1_fq0c3"]
 [ext_resource type="Script" uid="uid://b4ukuehclx6r6" path="res://EntityTemplates/Enterprise.gd" id="1_vevoc"]
+[ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_b34xf"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="3_equ1b"]
 
 [resource]
 script = ExtResource("1_vevoc")
 company_name = "TestName"
+funds = 5000.0
+social = 10000
 metadata/_custom_type_script = "uid://b4ukuehclx6r6"

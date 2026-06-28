@@ -11,7 +11,9 @@ func reload():
 		i.building = x
 		$BuildingChooser/VBoxContainer.add_child(i)
 		
-
+func _process(delta: float) -> void:
+	if visible:
+		$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
 
 func _on_ok_pressed() -> void:
 	visible = false

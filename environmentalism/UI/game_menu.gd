@@ -23,29 +23,100 @@ func reload():
 		$EventPopup/EventName.text = tr(World.current_enterprise.events_to_process[0].event_name)
 		$EventPopup/EventImage.texture = World.current_enterprise.events_to_process[0].image
 		$EventPopup/Description.text = tr(World.current_enterprise.events_to_process[0].description)
+		$EventPopup/Description.text += "\n"
+		for x in World.current_enterprise.events_to_process[0].effects:
+			var effect = x.split(" ")
+			if effect[0] == "funds":
+				$EventPopup/Description.text += "[color=gold]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+			if effect[0] == "social":
+				$EventPopup/Description.text += "[color=cyan]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+			if effect[0] == "manpower":
+				$EventPopup/Description.text += "[color=blue]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+			
 	else:
 		$EventPopup.visible = false
 	
 	$Indicators.text = ""
-	
-	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
-	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+"NEEDED"+ "[/color]"
-	$Indicators.text += "[color=green] \n" + tr("TRENV") + " - " + str(World.current_enterprise.environmental) + "[/color]"
-	$Indicators.text += "[color=cyan] \n" + tr("TRSOC") + " - " + str(World.current_enterprise.social) + "[/color]"
-	$Indicators.text += "[color=white] \n" + tr("TRGOV") + " - " + str(World.current_enterprise.governance) + "[/color]"
-	$Indicators.text += "[color=lightgreen] \n" + tr("TRECO") + " - " + str(World.ecosystem) + "[/color]"
+	var changes = calculate_next_turn()
+	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + " ("+ str(changes[0]["funds"]) + ")" + "[/color]"
+	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement) + "[/color]"
+	$Indicators.text += "[color=green] \n" + tr("TRENV") + " - " + str(World.current_enterprise.environmental) + " ("+tr("TRWILLBE") +" "+ str(changes[1]["environmental"]) + ")" + "[/color]"
+	$Indicators.text += "[color=cyan] \n" + tr("TRSOC") + " - " + str(World.current_enterprise.social) + " ("+ str(changes[0]["social"]) + ")" + "[/color]"
+	$Indicators.text += "[color=white] \n" + tr("TRGOV") + " - " + str(World.current_enterprise.governance) + " ("+tr("TRWILLBE") +" "+ str(changes[1]["governance"]) + ")" + "[/color]"
+	var envmod = 1.0-(int((10000-World.ecosystem)/2000)*0.2)
+	if World.ecosystem <= 8000:
+		$Indicators.text += "[color=lightgreen] \n" + tr("TRECO") + " - " + str(World.ecosystem) + "[/color]" + " [color=red](" + tr("TRFUNDS") + " " + "-" +str((1.0-envmod)*100)+"%!" + ")"
+	else:
+		$Indicators.text += "[color=lightgreen] \n" + tr("TRECO") + " - " + str(World.ecosystem) + "[/color]"
 		
 func open_building_menu(building:Building):
 	$BuildingManagementPopup.building = building
 	$BuildingManagementPopup.reload()
 	$BuildingManagementPopup.visible = true
 
+func calculate_next_turn():
+	var effects = {"environmental":{}, "governance":{}, "social":{}, "funds":{}, "manpower":{}}
+	for x in World.current_enterprise.buildings:
+		print(x)
+		for y in x.effects:
+			var effect = y.split(" ")
+			if !effects[effect[0]].has(effect[1]):
+				effects[effect[0]][effect[1]] = float(effect[2])
+			else:
+				effects[effect[0]][effect[1]] += float(effect[2])
+		for y in x.upgrades:
+			if !y.is_installed:
+				continue
+			for z in y.effects:
+				var effect = z.split(" ")
+				if !effects[effect[0]].has(effect[1]):
+					effects[effect[0]][effect[1]] = float(effect[2])
+				else:
+					effects[effect[0]][effect[1]] += float(effect[2])
+	for x in World.current_enterprise.policies:
+		for y in x.effects:
+			var effect = y.split(" ")
+			if !effects[effect[0]].has(effect[1]):
+				effects[effect[0]][effect[1]] = float(effect[2])
+			else:
+				effects[effect[0]][effect[1]] += float(effect[2])
+	print(effects)
+	var order = ["+", "-", "+*", "-*"]
+	
+	for x in effects.keys():
+		if effects[x].has("+*"):
+			effects[x]["+*"] = clamp(effects[x]["+*"], -1, INF)
+			if effects[x].has("+"):
+				effects[x]["+"] *= 1 + effects[x]["+*"]
+		if effects[x].has("-*"):
+			effects[x]["-*"] = clamp(effects[x]["-*"], -1, INF)
+			if effects[x].has("-"):
+				effects[x]["-"] *= 1 + effects[x]["-*"]
+	
+	
+	var additions = {"social":0.0, "funds":0.0}
+	var values = {"environmental":0, "governance":0}
+	
+	additions["social"] = floor(get_result_or_zero(effects, "social", "+") - get_result_or_zero(effects, "social", "-"))
+	
+	var envmod = 1.0-(int((10000-World.ecosystem)/2000)*0.2)
+	additions["funds"] = (floor(get_result_or_zero(effects, "funds", "+")*envmod) - get_result_or_zero(effects, "funds", "-"))
+
+	values["environmental"] = floor(get_result_or_zero(effects, "environmental", "+") - get_result_or_zero(effects, "environmental", "-"))
+	values["governance"] = floor(get_result_or_zero(effects, "governance", "+") - get_result_or_zero(effects, "governance", "-"))
+	
+	return [additions, values]
 
 func _on_build_pressed() -> void:
 	$BuildingChoicePopup.reload()
 	$BuildingChoicePopup.visible = true
 	pass # Replace with function body.
 
+func get_result_or_zero(effects:Dictionary, modifier:String, category:String):
+	if effects[modifier].has(category):
+		return effects[modifier][category]
+	else:
+		return 0.0
 
 func _on_turn_pressed() -> void:
 	World.current_enterprise.next_turn()
