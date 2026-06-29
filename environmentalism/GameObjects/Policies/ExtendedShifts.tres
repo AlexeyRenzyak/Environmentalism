@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_uayse")
 policy_name = "Extended Shifts"
+image_path = "uid://cev1kkyqewie4"
 image = ExtResource("1_eumct")
 cost = 500.0
 effects = Array[String](["funds +* 0.5", "social -* 1"])

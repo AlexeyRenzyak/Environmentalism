@@ -17,6 +17,9 @@ class_name Enterprise
 
 @export var events_to_process : Array[Event] 
 
+func _init() -> void:
+	ObjectSerializer.register_script("Enterprise", Enterprise)
+
 func next_turn() -> void: 
 	#Effect Processing
 	var effects = {"environmental":{}, "governance":{}, "social":{}, "funds":{}, "manpower":{}}
@@ -114,6 +117,7 @@ func next_turn() -> void:
 			
 	
 	turn_counter += 1
+	World._save()
 
 func get_result_or_zero(effects:Dictionary, modifier:String, category:String):
 	if effects[modifier].has(category):

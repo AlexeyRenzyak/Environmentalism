@@ -32,9 +32,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.033333335
-anchor_top = 0.28703707
+anchor_top = 0.2027778
 anchor_right = 0.96700007
-anchor_bottom = 0.33329636
+anchor_bottom = 0.24903709
 offset_right = -0.6401367
 offset_bottom = 0.039978027
 theme_override_font_sizes/font_size = 40
@@ -46,9 +46,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3375
-anchor_top = 0.35555556
+anchor_top = 0.27129626
 anchor_right = 0.66233337
-anchor_bottom = 0.43662962
+anchor_bottom = 0.3523703
 offset_right = 0.3199463
 offset_bottom = 0.44000244
 text = "TRLOADGAME"
@@ -58,9 +58,9 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3375
-anchor_top = 0.53333336
+anchor_top = 0.44907406
 anchor_right = 0.66233337
-anchor_bottom = 0.6144074
+anchor_bottom = 0.53014815
 offset_right = 0.3199463
 offset_bottom = 0.44000244
 text = "TRNEWGAME"
@@ -70,12 +70,24 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.3375
-anchor_top = 0.7111111
+anchor_top = 0.62685186
 anchor_right = 0.66233337
-anchor_bottom = 0.7921852
+anchor_bottom = 0.70792586
 offset_right = 0.3199463
 offset_bottom = 0.44000244
 text = "TRLANGUAGESELECT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="." unique_id=950743513]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3375
+anchor_top = 0.8296296
+anchor_right = 0.66233337
+anchor_bottom = 0.9107037
+offset_right = 0.3199463
+offset_bottom = 0.44000244
+text = "TRQUIT"
 metadata/_edit_use_anchors_ = true
 
 [node name="LanguageSelectPopup" type="Panel" parent="." unique_id=1492230638]
@@ -139,7 +151,7 @@ offset_right = -0.3200035
 offset_bottom = 0.040000916
 metadata/_edit_use_anchors_ = true
 
-[node name="Back" type="Button" parent="NewGamePopup" unique_id=1965242383]
+[node name="BackNG" type="Button" parent="NewGamePopup" unique_id=1965242383]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.1923077
@@ -148,11 +160,11 @@ anchor_right = 0.8074188
 anchor_bottom = 0.89229757
 offset_right = 0.5119996
 offset_bottom = 0.25599957
-text = "TRBACK
-"
+text = "TRBACK"
 metadata/_edit_use_anchors_ = true
 
-[node name="Back2" type="Button" parent="NewGamePopup" unique_id=1674666220]
+[node name="Start" type="Button" parent="NewGamePopup" unique_id=1674666220]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.15811966
@@ -161,9 +173,7 @@ anchor_right = 0.84160686
 anchor_bottom = 0.7142938
 offset_right = 0.5119629
 offset_bottom = 0.25598145
-text = "TRSTART
-
-"
+text = "TRSTART"
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuTitle" type="Label" parent="NewGamePopup" unique_id=709271650]
@@ -211,8 +221,13 @@ alignment = 1
 max_length = 40
 metadata/_edit_use_anchors_ = true
 
+[connection signal="pressed" from="LoadGame" to="." method="_on_load_game_pressed"]
 [connection signal="pressed" from="NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="LanguageSelect" to="." method="_on_language_select_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="LanguageSelectPopup/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="LanguageSelectPopup/English" to="." method="_on_english_pressed"]
 [connection signal="pressed" from="LanguageSelectPopup/Russian" to="." method="_on_russian_pressed"]
+[connection signal="pressed" from="NewGamePopup/BackNG" to="." method="_on_back_ng_pressed"]
+[connection signal="pressed" from="NewGamePopup/Start" to="." method="_on_start_pressed"]
+[connection signal="text_changed" from="NewGamePopup/CompanyNameEnter" to="." method="_on_company_name_enter_text_changed"]

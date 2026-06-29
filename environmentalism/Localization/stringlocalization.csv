@@ -32,3 +32,8 @@ TRGAIN,Gain,Получение
 TRUPKEEP,Upkeep,Содержание
 TRPOSITIVE,Positive Modifiers,Положительные модификаторы
 TRNEGATIVE,Negative Modifiers,Негативные модификаторы
+TRTURNS,Turn(s),Ход(ов)
+TRCOMPANYNAME,Your Company's Name,Имя Вашей компании
+TRYOURCOMPANYNAME,Enter Your Company's Name,Введите имя Вашей компании
+TRSTART,Start,Начать
+TRQUIT,Quit Game,Покинуть игру

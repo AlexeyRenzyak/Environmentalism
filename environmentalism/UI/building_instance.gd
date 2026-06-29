@@ -8,6 +8,7 @@ func _ready() -> void:
 	if building.construction_time != 0:
 		$NotBuilt.visible = true
 		$NotBuilt/Counter.text = str(building.construction_time)
+		
 
 
 func _on_pressed() -> void:

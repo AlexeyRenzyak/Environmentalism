@@ -6,6 +6,7 @@ func _ready() -> void:
 	$Image.texture = building.image
 	$Label.text = tr(building.building_name) + " (" + str(int(floor(building.base_construction_time*get_ctime_modifier())))+")"
 	$Effects.text += tr("TRCOST")+ " - " + str(building.cost)
+	print(building.resource_path)
 	write_effects()
 	
 

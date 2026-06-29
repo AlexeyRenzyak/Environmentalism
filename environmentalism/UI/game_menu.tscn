@@ -651,6 +651,7 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Build" to="." method="_on_build_pressed"]
 [connection signal="pressed" from="Policies" to="." method="_on_policies_pressed"]
 [connection signal="pressed" from="Turn" to="." method="_on_turn_pressed"]
+[connection signal="pressed" from="SaveQuit" to="." method="_on_save_quit_pressed"]
 [connection signal="pressed" from="PoliciesChoicePopup/Ok" to="PoliciesChoicePopup" method="_on_ok_pressed"]
 [connection signal="pressed" from="BuildingChoicePopup/Ok" to="BuildingChoicePopup" method="_on_ok_pressed"]
 [connection signal="pressed" from="BuildingManagementPopup/Ok" to="BuildingManagementPopup" method="_on_ok_pressed"]

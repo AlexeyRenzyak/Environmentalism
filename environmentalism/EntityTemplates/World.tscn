@@ -2,10 +2,13 @@
 
 [ext_resource type="Script" uid="uid://cv8wfe0pjtegr" path="res://EntityTemplates/World.gd" id="1_mkckj"]
 [ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_4lskp"]
+[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="3_4lskp"]
 
 [sub_resource type="Resource" id="Resource_mkckj"]
 script = ExtResource("2_4lskp")
 event_name = "Test1"
+image_path = "uid://cev1kkyqewie4"
+image = ExtResource("3_4lskp")
 description = "10"
 family = "T"
 effects = Array[String](["funds + 100"])
@@ -15,6 +18,8 @@ metadata/_custom_type_script = "uid://cveydjdjl1j67"
 [sub_resource type="Resource" id="Resource_at4jw"]
 script = ExtResource("2_4lskp")
 event_name = "Test2"
+image_path = "uid://cev1kkyqewie4"
+image = ExtResource("3_4lskp")
 description = "20"
 family = "T"
 effects = Array[String](["funds + 200"])
@@ -24,6 +29,8 @@ metadata/_custom_type_script = "uid://cveydjdjl1j67"
 [sub_resource type="Resource" id="Resource_4lskp"]
 script = ExtResource("2_4lskp")
 event_name = "Test3"
+image_path = "uid://cev1kkyqewie4"
+image = ExtResource("3_4lskp")
 description = "30"
 family = "T"
 effects = Array[String](["funds + 300"])
@@ -33,6 +40,8 @@ metadata/_custom_type_script = "uid://cveydjdjl1j67"
 [sub_resource type="Resource" id="Resource_5y4mk"]
 script = ExtResource("2_4lskp")
 event_name = "BAD ECOSYSTEM!!!"
+image_path = "uid://cev1kkyqewie4"
+image = ExtResource("3_4lskp")
 description = "AAA"
 family = "A"
 conditions = Array[String](["RAND = 100", "ecosystem < 5000"])

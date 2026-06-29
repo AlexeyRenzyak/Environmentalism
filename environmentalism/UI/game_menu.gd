@@ -134,3 +134,9 @@ func _on_ok_pressed() -> void:
 	World.current_enterprise.handle_event_effects()
 	reload()
 	pass # Replace with function body.
+
+
+func _on_save_quit_pressed() -> void:
+	World._save()
+	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+	pass # Replace with function body.
