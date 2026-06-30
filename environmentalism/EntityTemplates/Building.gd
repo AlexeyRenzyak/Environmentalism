@@ -6,6 +6,7 @@ class_name Building
 @export var image : Texture2D
 
 @export var cost : float
+@export var manpower_requirement : int
 @export var base_construction_time : int
 @export var construction_time : int
 @export var effects : Array[String]

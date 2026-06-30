@@ -23,6 +23,7 @@ building_name = "TRCOALPOWERPLANT"
 image_path = "uid://chaxu2cen1w0g"
 image = ExtResource("1_w7fdh")
 cost = 1000.0
+manpower_requirement = 100
 base_construction_time = 5
 effects = Array[String](["funds + 250", "governance - 100", "environmental - 200", "social - 50"])
 upgrades = Array[ExtResource("2_w7fdh")]([SubResource("Resource_w7fdh"), SubResource("Resource_8noh6")])

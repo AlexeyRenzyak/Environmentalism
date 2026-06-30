@@ -80,7 +80,7 @@ func write_effects():
 func _on_button_pressed() -> void:
 	if !enacted:
 		if floor(policy.cost*get_cost_modifier()) <= World.current_enterprise.funds:
-			World.current_enterprise.funds -= policy.cost
+			World.current_enterprise.funds -= policy.cost*get_cost_modifier()
 		else:
 			return
 		var b = policy.duplicate(true)

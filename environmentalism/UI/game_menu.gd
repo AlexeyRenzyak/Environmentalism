@@ -29,17 +29,18 @@ func reload():
 			if effect[0] == "funds":
 				$EventPopup/Description.text += "[color=gold]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
 			if effect[0] == "social":
-				$EventPopup/Description.text += "[color=cyan]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+				$EventPopup/Description.text += "[color=cyan]" + tr("TRSOCIAL") + " " + effect[1] + str(effect[2]) + "[/color]"
 			if effect[0] == "manpower":
-				$EventPopup/Description.text += "[color=blue]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+				$EventPopup/Description.text += "[color=blue]" + tr("TRMANPOWER") + " " + effect[1] + str(effect[2]) + "[/color]"
 			
 	else:
 		$EventPopup.visible = false
 	
 	$Indicators.text = ""
 	var changes = calculate_next_turn()
+	var manpower_requirement = 0
 	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + " ("+ str(changes[0]["funds"]) + ")" + "[/color]"
-	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement) + "[/color]"
+	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement) + " ("+ str(changes[0]["manpower_requirements"]) + ")" +  "[/color]"
 	$Indicators.text += "[color=green] \n" + tr("TRENV") + " - " + str(World.current_enterprise.environmental) + " ("+tr("TRWILLBE") +" "+ str(changes[1]["environmental"]) + ")" + "[/color]"
 	$Indicators.text += "[color=cyan] \n" + tr("TRSOC") + " - " + str(World.current_enterprise.social) + " ("+ str(changes[0]["social"]) + ")" + "[/color]"
 	$Indicators.text += "[color=white] \n" + tr("TRGOV") + " - " + str(World.current_enterprise.governance) + " ("+tr("TRWILLBE") +" "+ str(changes[1]["governance"]) + ")" + "[/color]"
@@ -83,6 +84,16 @@ func calculate_next_turn():
 	print(effects)
 	var order = ["+", "-", "+*", "-*"]
 	
+	var manpower_requirements = 0
+	for x in World.current_enterprise.buildings:
+		manpower_requirements += x.manpower_requirement
+	
+	var future_mp_coefficient = float(World.current_enterprise.manpower)/float(manpower_requirements)
+	
+	if is_nan(future_mp_coefficient) or future_mp_coefficient == -INF or future_mp_coefficient == INF:
+		future_mp_coefficient = 0
+	future_mp_coefficient = clamp(future_mp_coefficient, 0, 1)
+	
 	for x in effects.keys():
 		if effects[x].has("+*"):
 			effects[x]["+*"] = clamp(effects[x]["+*"], -1, INF)
@@ -91,20 +102,25 @@ func calculate_next_turn():
 		if effects[x].has("-*"):
 			effects[x]["-*"] = clamp(effects[x]["-*"], -1, INF)
 			if effects[x].has("-"):
-				effects[x]["-"] *= 1 + effects[x]["-*"]
+				if x == "funds" or x == "environmental" or x == "social":
+					effects[x]["-"] *= 1 + effects[x]["-*"]
+				else:
+					effects[x]["-"] *= 1 + effects[x]["-*"]
 	
 	
 	var additions = {"social":0.0, "funds":0.0}
 	var values = {"environmental":0, "governance":0}
 	
-	additions["social"] = floor(get_result_or_zero(effects, "social", "+") - get_result_or_zero(effects, "social", "-"))
+	additions["social"] = floor(future_mp_coefficient*get_result_or_zero(effects, "social", "+") - future_mp_coefficient*get_result_or_zero(effects, "social", "-"))
 	
 	var envmod = 1.0-(int((10000-World.ecosystem)/2000)*0.2)
-	additions["funds"] = (floor(get_result_or_zero(effects, "funds", "+")*envmod) - get_result_or_zero(effects, "funds", "-"))
+	additions["funds"] = (floor(future_mp_coefficient*get_result_or_zero(effects, "funds", "+")*envmod) - future_mp_coefficient*get_result_or_zero(effects, "funds", "-")) - World.current_enterprise.manpower
 
-	values["environmental"] = floor(get_result_or_zero(effects, "environmental", "+") - get_result_or_zero(effects, "environmental", "-"))
+	values["environmental"] = floor(future_mp_coefficient*get_result_or_zero(effects, "environmental", "+") - future_mp_coefficient*get_result_or_zero(effects, "environmental", "-"))
 	values["governance"] = floor(get_result_or_zero(effects, "governance", "+") - get_result_or_zero(effects, "governance", "-"))
 	
+	values["governance"] -= World.current_enterprise.manpower
+	additions["manpower_requirements"] = manpower_requirements
 	return [additions, values]
 
 func _on_build_pressed() -> void:
@@ -139,4 +155,10 @@ func _on_ok_pressed() -> void:
 func _on_save_quit_pressed() -> void:
 	World._save()
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
+	pass # Replace with function body.
+
+
+func _on_manpower_pressed() -> void:
+	$ManpowerPopup.reload()
+	$ManpowerPopup.visible = true
 	pass # Replace with function body.

@@ -6,7 +6,7 @@ class_name Enterprise
 
 @export var funds : float
 @export var manpower : int
-@export var manpower_requirement : int
+@export var manpower_requirement : int = 0
 @export var environmental : int
 @export var social : int
 @export var governance : int
@@ -23,7 +23,9 @@ func _init() -> void:
 func next_turn() -> void: 
 	#Effect Processing
 	var effects = {"environmental":{}, "governance":{}, "social":{}, "funds":{}, "manpower":{}}
+	manpower_requirement = 0
 	for x in buildings:
+		manpower_requirement += x.manpower_requirement
 		for y in x.effects:
 			var effect = y.split(" ")
 			if !effects[effect[0]].has(effect[1]):
@@ -46,7 +48,15 @@ func next_turn() -> void:
 				effects[effect[0]][effect[1]] = float(effect[2])
 			else:
 				effects[effect[0]][effect[1]] += float(effect[2])
+	
 	var order = ["+", "-", "+*", "-*"]
+	
+			
+	var future_mp_coefficient = float(World.current_enterprise.manpower)/float(World.current_enterprise.manpower_requirement)
+	
+	if is_nan(future_mp_coefficient) or future_mp_coefficient == -INF or future_mp_coefficient == INF:
+		future_mp_coefficient = 0
+	future_mp_coefficient = clamp(future_mp_coefficient, 0, 1)
 	
 	for x in effects.keys():
 		if effects[x].has("+*"):
@@ -56,17 +66,21 @@ func next_turn() -> void:
 		if effects[x].has("-*"):
 			effects[x]["-*"] = clamp(effects[x]["-*"], -1, INF)
 			if effects[x].has("-"):
-				effects[x]["-"] *= 1 + effects[x]["-*"]
+				if x == "funds" or x == "environmental" or x == "social":
+					effects[x]["-"] *= 1 + effects[x]["-*"]
+				else:
+					effects[x]["-"] *= 1 + effects[x]["-*"]
+	
 	
 	
 	var additions = {"social":0.0, "funds":0.0}
 	var values = {"environmental":0, "governance":0}
-	additions["social"] = floor(get_result_or_zero(effects, "social", "+") - get_result_or_zero(effects, "social", "-"))
+	additions["social"] = floor(future_mp_coefficient*get_result_or_zero(effects, "social", "+") - future_mp_coefficient*get_result_or_zero(effects, "social", "-"))
 	
 	var envmod = 1.0-(int((10000-World.ecosystem)/2000)*0.2)
-	additions["funds"] = (floor(get_result_or_zero(effects, "funds", "+")*envmod) - get_result_or_zero(effects, "funds", "-"))
+	additions["funds"] = (floor(future_mp_coefficient*get_result_or_zero(effects, "funds", "+")*envmod) - future_mp_coefficient*get_result_or_zero(effects, "funds", "-")) - World.current_enterprise.manpower
 
-	values["environmental"] = floor(get_result_or_zero(effects, "environmental", "+") - get_result_or_zero(effects, "environmental", "-"))
+	values["environmental"] = floor(future_mp_coefficient*get_result_or_zero(effects, "environmental", "+") - future_mp_coefficient*get_result_or_zero(effects, "environmental", "-"))
 	values["governance"] = floor(get_result_or_zero(effects, "governance", "+") - get_result_or_zero(effects, "governance", "-"))
 	
 	social = clamp(social + additions["social"], 0, 10000)
@@ -74,7 +88,10 @@ func next_turn() -> void:
 	
 	environmental = values["environmental"]
 	governance = values["governance"]
-		
+	
+	governance -= manpower
+	
+	World.ecosystem += 10
 	if environmental <= 0:
 		World.ecosystem += environmental
 	elif environmental > 0:
@@ -115,7 +132,6 @@ func next_turn() -> void:
 					already_enacted_event_families.append(x.family)
 				
 			
-	
 	turn_counter += 1
 	World._save()
 
