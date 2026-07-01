@@ -7,6 +7,21 @@
 [ext_resource type="Script" uid="uid://cfclvkxdfcdyh" path="res://UI/policies_choice_popup.gd" id="3_h44us"]
 [ext_resource type="Script" uid="uid://dufwevt4npf34" path="res://UI/building_management_popup.gd" id="3_y331g"]
 [ext_resource type="Script" uid="uid://ddpmrccbdc245" path="res://UI/manpower_popup.gd" id="7_h44us"]
+[ext_resource type="Script" uid="uid://bol6xl6lyw8jc" path="res://UI/game_over_popup.gd" id="8_nammb"]
+[ext_resource type="Texture2D" uid="uid://dtodhyqisgbi0" path="res://Images/marion-desert-279862.jpg" id="9_aq2d1"]
+[ext_resource type="Texture2D" uid="uid://baxx1sbus0jdb" path="res://Images/simonmichaelhill-bankrupt-2922154.jpg" id="10_8qqst"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq2d1"]
+bg_color = Color(0.24082094, 0.2605247, 0.29599115, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02997389, 0.0939483, 0.12164106, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [node name="GameMenu" type="Control" unique_id=131506874]
 layout_mode = 3
@@ -17,6 +32,16 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3y86k")
 script = ExtResource("2_aroug")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1988609387]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0001667
+anchor_bottom = 0.9999629
+offset_right = -0.3199463
+offset_bottom = 0.040039063
+color = Color(0.010158866, 0.049902946, 0.07258835, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Build" type="Button" parent="." unique_id=2056394106]
 layout_mode = 1
@@ -113,7 +138,19 @@ offset_right = -0.32000732
 offset_bottom = 0.040000916
 theme_override_constants/line_separation = 50
 theme_override_font_sizes/normal_font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_aq2d1")
 bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildingListBG" type="Panel" parent="." unique_id=582904708]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29166666
+anchor_top = 0.11111111
+anchor_right = 0.98766667
+anchor_bottom = 0.7777408
+offset_right = -0.3200035
+offset_bottom = 0.040000916
 metadata/_edit_use_anchors_ = true
 
 [node name="BuildingList" type="ScrollContainer" parent="." unique_id=152059593]
@@ -312,7 +349,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Funds" type="RichTextLabel" parent="BuildingManagementPopup" unique_id=163677954]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.7863248
+anchor_left = 0.7136752
 anchor_top = 0.016528925
 anchor_right = 0.991624
 anchor_bottom = 0.08260333
@@ -485,6 +522,25 @@ anchor_bottom = 0.98514813
 offset_right = -0.3200035
 offset_bottom = 0.040000916
 script = ExtResource("7_h44us")
+metadata/_edit_use_anchors_ = true
+
+[node name="Funds" type="RichTextLabel" parent="ManpowerPopup" unique_id=13354518]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.1322314
+anchor_right = 0.97880346
+anchor_bottom = 0.1983058
+offset_right = -0.32006836
+offset_bottom = 0.039978027
+theme_override_constants/line_separation = 50
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "
+"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Manpower" type="Label" parent="ManpowerPopup" unique_id=304075655]
@@ -665,6 +721,87 @@ text = "-1000
 "
 metadata/_edit_use_anchors_ = true
 
+[node name="GameOverPopup" type="Panel" parent="." unique_id=191239104]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0001665
+anchor_bottom = 0.9999629
+offset_right = -0.3200035
+offset_bottom = 0.040000916
+script = ExtResource("8_nammb")
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" type="Label" parent="GameOverPopup" unique_id=1711818360]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021354169
+anchor_top = 0.06666667
+anchor_right = 0.9789867
+anchor_bottom = 0.15967408
+offset_right = -0.68811035
+offset_bottom = -25.448006
+theme_override_font_sizes/font_size = 60
+text = "TRGAMEOVER"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverImage" type="TextureRect" parent="GameOverPopup" unique_id=1360765238]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.20661157
+anchor_right = 0.978265
+anchor_bottom = 0.64415556
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+texture = ExtResource("9_aq2d1")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverImage2" type="TextureRect" parent="GameOverPopup" unique_id=2024176797]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.20661157
+anchor_right = 0.978265
+anchor_bottom = 0.64415556
+offset_right = 0.6879883
+offset_bottom = 0.31201172
+texture = ExtResource("10_8qqst")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="GameOverPopup" unique_id=1902964220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021367522
+anchor_top = 0.67407405
+anchor_right = 0.978265
+anchor_bottom = 0.83438843
+offset_right = 0.6879959
+offset_bottom = 0.31200027
+theme_override_font_sizes/normal_font_size = 34
+bbcode_enabled = true
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Ok" type="Button" parent="GameOverPopup" unique_id=176996720]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1923077
+anchor_top = 0.8595041
+anchor_right = 0.8074188
+anchor_bottom = 0.95841324
+offset_right = 0.5119996
+offset_bottom = 0.25599957
+text = "TROK"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Build" to="." method="_on_build_pressed"]
 [connection signal="pressed" from="Policies" to="." method="_on_policies_pressed"]
 [connection signal="pressed" from="Manpower" to="." method="_on_manpower_pressed"]
@@ -683,3 +820,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="ManpowerPopup/Bm10" to="ManpowerPopup" method="_on_bm_10_pressed"]
 [connection signal="pressed" from="ManpowerPopup/Bm100" to="ManpowerPopup" method="_on_bm_100_pressed"]
 [connection signal="pressed" from="ManpowerPopup/Bm1000" to="ManpowerPopup" method="_on_bm_1000_pressed"]
+[connection signal="pressed" from="GameOverPopup/Ok" to="GameOverPopup" method="_on_ok_pressed"]

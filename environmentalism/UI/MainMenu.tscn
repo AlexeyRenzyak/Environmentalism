@@ -2,6 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://bpvicmp44fcd0" path="res://UI/GeneralTheme.tres" id="1_uahxu"]
 [ext_resource type="Script" uid="uid://ri6l4sqx3dr8" path="res://UI/main_menu.gd" id="2_b37jj"]
+[ext_resource type="Texture2D" uid="uid://5bsuqecxo2iy" path="res://Images/clark-gu--U_4hQkicyM-unsplash.jpg" id="3_8aown"]
+[ext_resource type="Texture2D" uid="uid://gk37numc1ges" path="res://Images/69-697114_vignette-png.png" id="4_t6syg"]
 
 [node name="MainMenu" type="Control" unique_id=963972349]
 layout_mode = 3
@@ -12,6 +14,32 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_uahxu")
 script = ExtResource("2_b37jj")
+
+[node name="BG" type="TextureRect" parent="." unique_id=1348563132]
+modulate = Color(0.26949427, 0.26834378, 0.31927225, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0001667
+anchor_bottom = 0.9999629
+offset_right = -0.3199463
+offset_bottom = 0.040039063
+texture = ExtResource("3_8aown")
+expand_mode = 3
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Vignette" type="TextureRect" parent="." unique_id=1422221370]
+modulate = Color(0.26949427, 0.26834378, 0.31927225, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0001667
+anchor_bottom = 0.9999629
+offset_right = -0.3199463
+offset_bottom = 0.040039063
+texture = ExtResource("4_t6syg")
+expand_mode = 3
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
 
 [node name="GameName" type="Label" parent="." unique_id=189162882]
 layout_mode = 1

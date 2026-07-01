@@ -2,8 +2,53 @@
 
 [ext_resource type="FontFile" uid="uid://cbks6evv17ctp" path="res://Fonts/Montserrat-VariableFont_wght.ttf" id="1_cv2vj"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svf8u"]
-bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cv2vj"]
+bg_color = Color(0.1335268, 0.32460767, 0.38152057, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.07172196, 0.08445559, 0.11646595, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hdhl"]
+bg_color = Color(0.08764581, 0.22982776, 0.27503762, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.07172196, 0.08445559, 0.11646595, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk2nx"]
+bg_color = Color(0.050962918, 0.16046095, 0.19298634, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.07172196, 0.08445559, 0.11646595, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i51fv"]
+bg_color = Color(0.24082094, 0.2605247, 0.29599115, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.02997389, 0.0939483, 0.12164106, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="FontVariation" id="FontVariation_lxoaf"]
 base_font = ExtResource("1_cv2vj")
@@ -12,4 +57,7 @@ variation_embolden = 0.13
 [resource]
 default_font = SubResource("FontVariation_lxoaf")
 default_font_size = 40
-Panel/styles/panel = SubResource("StyleBoxFlat_svf8u")
+Button/styles/hover = SubResource("StyleBoxFlat_cv2vj")
+Button/styles/normal = SubResource("StyleBoxFlat_2hdhl")
+Button/styles/pressed = SubResource("StyleBoxFlat_xk2nx")
+Panel/styles/panel = SubResource("StyleBoxFlat_i51fv")

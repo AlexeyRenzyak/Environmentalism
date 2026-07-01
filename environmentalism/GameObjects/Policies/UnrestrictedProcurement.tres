@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://cyn36log5q0sd"]
+
+[ext_resource type="Texture2D" uid="uid://wshokpkxa5h7" path="res://Images/Policies/alberto-rodriguez--aCrA9FmT8Y-unsplash.jpg" id="1_ws55l"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_j2ghc"]
+
+[resource]
+script = ExtResource("2_j2ghc")
+policy_name = "TRUNRESTRICTEDPROCUREMENT"
+image_path = "uid://wshokpkxa5h7"
+image = ExtResource("1_ws55l")
+cost = 650.0
+effects = Array[String](["environmental -* +0.2", "funds +* 0.1", "governance -* -0.1"])
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

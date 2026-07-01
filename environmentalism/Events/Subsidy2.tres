@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Event" format=3 uid="uid://dhixtxw12dxck"]
+
+[ext_resource type="Texture2D" uid="uid://dx0uu5ex04xgl" path="res://Images/Events/pexels-pixabay-210574.jpg" id="1_dubu3"]
+[ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_id358"]
+
+[resource]
+script = ExtResource("2_id358")
+event_name = "TRSUBSIDY"
+image_path = "uid://dx0uu5ex04xgl"
+image = ExtResource("1_dubu3")
+description = "TRSUBSIDYD"
+family = "SUBSIDY"
+effects = Array[String](["funds + 2000"])
+conditions = Array[String](["environmental > 300", "RAND = 5"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"

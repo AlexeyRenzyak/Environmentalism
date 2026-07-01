@@ -7,6 +7,7 @@ bg_color = Color(0.11858138, 0.11858139, 0.11858132, 1)
 
 [node name="PolicyToEnact" type="Panel" unique_id=1210832431]
 custom_minimum_size = Vector2(0, 180)
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_aroug")
 script = ExtResource("1_kq28q")
 
@@ -31,6 +32,7 @@ anchor_top = 0.0022839864
 anchor_right = 1.0
 anchor_bottom = 1.0020001
 offset_bottom = 0.034072876
+mouse_filter = 1
 text = "TRACTIONENACT"
 metadata/_edit_use_anchors_ = true
 
@@ -43,7 +45,7 @@ anchor_right = 0.3597193
 anchor_bottom = 0.9109507
 offset_right = -0.12800217
 offset_bottom = -0.04000473
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 26
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -57,6 +59,7 @@ anchor_right = 0.70192987
 anchor_bottom = 0.9080003
 offset_right = -0.32000732
 offset_bottom = 0.039978027
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 horizontal_alignment = 1

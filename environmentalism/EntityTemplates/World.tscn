@@ -2,54 +2,20 @@
 
 [ext_resource type="Script" uid="uid://cv8wfe0pjtegr" path="res://EntityTemplates/World.gd" id="1_mkckj"]
 [ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_4lskp"]
-[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="3_4lskp"]
-
-[sub_resource type="Resource" id="Resource_mkckj"]
-script = ExtResource("2_4lskp")
-event_name = "Test1"
-image_path = "uid://cev1kkyqewie4"
-image = ExtResource("3_4lskp")
-description = "10"
-family = "T"
-effects = Array[String](["funds + 100"])
-conditions = Array[String](["RAND = 10"])
-may_apply_tier_down = false
-metadata/_custom_type_script = "uid://cveydjdjl1j67"
-
-[sub_resource type="Resource" id="Resource_at4jw"]
-script = ExtResource("2_4lskp")
-event_name = "Test2"
-image_path = "uid://cev1kkyqewie4"
-image = ExtResource("3_4lskp")
-description = "20"
-family = "T"
-effects = Array[String](["funds + 200"])
-conditions = Array[String](["RAND = 20"])
-may_apply_tier_down = false
-metadata/_custom_type_script = "uid://cveydjdjl1j67"
-
-[sub_resource type="Resource" id="Resource_4lskp"]
-script = ExtResource("2_4lskp")
-event_name = "Test3"
-image_path = "uid://cev1kkyqewie4"
-image = ExtResource("3_4lskp")
-description = "30"
-family = "T"
-effects = Array[String](["funds + 300"])
-conditions = Array[String](["RAND = 30"])
-may_apply_tier_down = false
-metadata/_custom_type_script = "uid://cveydjdjl1j67"
-
-[sub_resource type="Resource" id="Resource_5y4mk"]
-script = ExtResource("2_4lskp")
-event_name = "BAD ECOSYSTEM!!!"
-image_path = "uid://cev1kkyqewie4"
-image = ExtResource("3_4lskp")
-description = "AAA"
-family = "A"
-conditions = Array[String](["RAND = 1", "ecosystem < 5000"])
-metadata/_custom_type_script = "uid://cveydjdjl1j67"
+[ext_resource type="Resource" uid="uid://bena4y6std21j" path="res://Events/Quitting3.tres" id="3_ldmm6"]
+[ext_resource type="Resource" uid="uid://d04fckhw5gple" path="res://Events/Quitting2.tres" id="4_gct1w"]
+[ext_resource type="Resource" uid="uid://bx3p43xlp0eu4" path="res://Events/Quitting1.tres" id="5_c7uum"]
+[ext_resource type="Resource" uid="uid://cg3j3d1l0yaf" path="res://Events/Strikes3.tres" id="6_abm75"]
+[ext_resource type="Resource" uid="uid://drrqk4gbpuro6" path="res://Events/Strikes2.tres" id="7_gx7s3"]
+[ext_resource type="Resource" uid="uid://cfnxk8pxj1se7" path="res://Events/Strikes1.tres" id="8_yvyt1"]
+[ext_resource type="Resource" uid="uid://s6xb056ejcci" path="res://Events/Fine3.tres" id="9_h0rtc"]
+[ext_resource type="Resource" uid="uid://u5xmujeficmc" path="res://Events/Fine2.tres" id="10_negmf"]
+[ext_resource type="Resource" uid="uid://53is3b6hs820" path="res://Events/Fine1.tres" id="11_0lbh6"]
+[ext_resource type="Resource" uid="uid://dugl7t5swcfvn" path="res://Events/Subsidy3.tres" id="12_ty6yl"]
+[ext_resource type="Resource" uid="uid://dhixtxw12dxck" path="res://Events/Subsidy2.tres" id="13_vct6p"]
+[ext_resource type="Resource" uid="uid://b3sytx8ovfvij" path="res://Events/Subsidy1.tres" id="14_uapsw"]
+[ext_resource type="Resource" uid="uid://cq1jilm3ygrxu" path="res://Events/Corruption.tres" id="15_d5mj2"]
 
 [node name="World" type="Node" unique_id=692358356]
 script = ExtResource("1_mkckj")
-events_pool = Array[ExtResource("2_4lskp")]([SubResource("Resource_mkckj"), SubResource("Resource_at4jw"), SubResource("Resource_4lskp"), SubResource("Resource_5y4mk")])
+events_pool = Array[ExtResource("2_4lskp")]([ExtResource("3_ldmm6"), ExtResource("4_gct1w"), ExtResource("5_c7uum"), ExtResource("6_abm75"), ExtResource("7_gx7s3"), ExtResource("8_yvyt1"), ExtResource("9_h0rtc"), ExtResource("10_negmf"), ExtResource("11_0lbh6"), ExtResource("12_ty6yl"), ExtResource("13_vct6p"), ExtResource("14_uapsw"), ExtResource("15_d5mj2")])

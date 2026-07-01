@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://buqbtty048guv"]
+
+[ext_resource type="Texture2D" uid="uid://cjnpae220bwmc" path="res://Images/Policies/pexels-talal-34369598.jpg" id="1_ej3rt"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_841mm"]
+
+[resource]
+script = ExtResource("2_841mm")
+policy_name = "TRADMINISTRATIVEOUTSOURCING"
+image_path = "uid://cjnpae220bwmc"
+image = ExtResource("1_ej3rt")
+cost = 1500.0
+effects = Array[String](["funds +* -0.1", "governance -* -0.1"])
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

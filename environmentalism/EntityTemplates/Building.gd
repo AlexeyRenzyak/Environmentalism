@@ -20,6 +20,4 @@ func _get_excluded_properties() -> Array[String]:
 	return ["image"]
 
 func restore_image():
-	var img = Image.load_from_file(image_path)
-	var texture = ImageTexture.create_from_image(img)
-	image = texture
+	image = World.images[building_name]

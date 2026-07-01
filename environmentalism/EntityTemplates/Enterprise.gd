@@ -192,6 +192,14 @@ func handle_event(event:Event) -> bool:
 			elif cond[1] == ">":
 				if float(cond[2]) > funds:
 					return false
+					
+		if cond[0] == "manpower":
+			if cond[1] == "<":
+				if float(cond[2]) < manpower:
+					return false
+			elif cond[1] == ">":
+				if float(cond[2]) > manpower:
+					return false
 	return true
 	
 func handle_event_preliminary(event:Event) -> bool:
@@ -241,6 +249,14 @@ func handle_event_preliminary(event:Event) -> bool:
 				if float(cond[2]) > funds:
 					return false
 					
+		if cond[0] == "manpower":
+			if cond[1] == "<":
+				if float(cond[2]) < manpower:
+					return false
+			elif cond[1] == ">":
+				if float(cond[2]) > manpower:
+					return false
+					
 	return true
 	
 func handle_event_effects() -> void:
@@ -259,3 +275,4 @@ func handle_event_effects() -> void:
 			set(effect[0], get(effect[0])-float(effect[2]))
 		
 	clamp(social, 0, 10000)
+	clamp(manpower, 0, INF)

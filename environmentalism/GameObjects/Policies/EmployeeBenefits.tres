@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://cxld4jqwa21mw"]
+
+[ext_resource type="Texture2D" uid="uid://lx71as54knxi" path="res://Images/Policies/stevepb-calculator-385506.jpg" id="1_dupcs"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_4uhus"]
+
+[resource]
+script = ExtResource("2_4uhus")
+policy_name = "TREMPLOYEEBENEFITS"
+image_path = "uid://lx71as54knxi"
+image = ExtResource("1_dupcs")
+cost = 1200.0
+effects = Array[String](["social -* -0.1", "funds +* -0.2"])
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

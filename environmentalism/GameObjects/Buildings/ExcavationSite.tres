@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://b0qnmppol471h"]
+
+[ext_resource type="Texture2D" uid="uid://cvb7ttnb7d750" path="res://Images/Buildings/dominik-vanyi-Mk2ls9UBO2E-unsplash.jpg" id="1_8dp2i"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_37nhc"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_obiwa"]
+
+[sub_resource type="Resource" id="Resource_37nhc"]
+script = ExtResource("3_obiwa")
+upgrade_name = "TRSTRIPMINING"
+cost = 500.0
+effects = Array[String](["funds + 300", "environmental - 150"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_obiwa"]
+script = ExtResource("3_obiwa")
+upgrade_name = "TRHEAVYMACHINERY"
+cost = 700.0
+effects = Array[String](["social + 100", "environmental - 50"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_37nhc")
+building_name = "TREXCAVATIONSITE"
+image_path = "uid://cvb7ttnb7d750"
+image = ExtResource("1_8dp2i")
+cost = 800.0
+manpower_requirement = 300
+base_construction_time = 9
+effects = Array[String](["social - 150", "governance - 120", "funds + 800", "environmental - 250"])
+upgrades = Array[ExtResource("3_obiwa")]([SubResource("Resource_37nhc"), SubResource("Resource_obiwa")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

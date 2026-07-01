@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://baqiebq351xhj"]
+
+[ext_resource type="Texture2D" uid="uid://wfkxsltmqjxm" path="res://Images/Buildings/pexels-willians-huerta-2157111846-36397860.jpg" id="1_roae7"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_tsogd"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_kd0fn"]
+
+[sub_resource type="Resource" id="Resource_tsogd"]
+script = ExtResource("3_kd0fn")
+upgrade_name = "TREXTERNALWASTE"
+cost = 200.0
+effects = Array[String](["funds + 150", "environmental - 75"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_roae7"]
+script = ExtResource("3_kd0fn")
+upgrade_name = "TRAUTOMATION"
+cost = 700.0
+effects = Array[String](["social + 50", "funds - 25"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_tsogd")
+building_name = "TRRECYCLINGCENTER"
+image_path = "uid://wfkxsltmqjxm"
+image = ExtResource("1_roae7")
+cost = 650.0
+manpower_requirement = 150
+base_construction_time = 6
+effects = Array[String](["social - 75", "governance - 100", "funds + 100", "environmental + 100"])
+upgrades = Array[ExtResource("3_kd0fn")]([SubResource("Resource_tsogd"), SubResource("Resource_roae7")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

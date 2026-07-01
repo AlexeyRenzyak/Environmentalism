@@ -48,9 +48,11 @@ func _on_load_game_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	var new_enterprise = World.enterprise_template.duplicate()
+	var new_enterprise = World.enterprise_template.duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
 	new_enterprise.company_name = $NewGamePopup/CompanyNameEnter.text
+	World.current_enterprise = null
 	World.current_enterprise = new_enterprise
+	World.ecosystem = 10000
 	World._save()
 	get_tree().change_scene_to_file("res://UI/game_menu.tscn")
 	pass # Replace with function body.

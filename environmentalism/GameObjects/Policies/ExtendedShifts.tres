@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Policy" format=3 uid="uid://bbdj068ije5li"]
 
-[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="1_eumct"]
+[ext_resource type="Texture2D" uid="uid://dyid3g8smkc4u" path="res://Images/Policies/nicolas-arnold-OsB2hKfYqas-unsplash.jpg" id="1_eumct"]
 [ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="1_uayse"]
 
 [resource]
 script = ExtResource("1_uayse")
-policy_name = "Extended Shifts"
-image_path = "uid://cev1kkyqewie4"
+policy_name = "TREXTENDEDSHIFTS"
+image_path = "uid://dyid3g8smkc4u"
 image = ExtResource("1_eumct")
 cost = 500.0
 effects = Array[String](["funds +* 0.5", "social -* 1"])

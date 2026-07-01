@@ -27,11 +27,11 @@ func reload():
 		for x in World.current_enterprise.events_to_process[0].effects:
 			var effect = x.split(" ")
 			if effect[0] == "funds":
-				$EventPopup/Description.text += "[color=gold]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color]"
+				$EventPopup/Description.text += "[color=gold]" + tr("TRFUNDS") + " " + effect[1] + str(effect[2]) + "[/color] \n"
 			if effect[0] == "social":
-				$EventPopup/Description.text += "[color=cyan]" + tr("TRSOCIAL") + " " + effect[1] + str(effect[2]) + "[/color]"
+				$EventPopup/Description.text += "[color=cyan]" + tr("TRSOC") + " " + effect[1] + str(effect[2]) + "[/color] \n"
 			if effect[0] == "manpower":
-				$EventPopup/Description.text += "[color=blue]" + tr("TRMANPOWER") + " " + effect[1] + str(effect[2]) + "[/color]"
+				$EventPopup/Description.text += "[color=blue]" + tr("TRMANPOWER") + " " + effect[1] + str(effect[2]) + "[/color] \n"
 			
 	else:
 		$EventPopup.visible = false
@@ -39,7 +39,7 @@ func reload():
 	$Indicators.text = ""
 	var changes = calculate_next_turn()
 	var manpower_requirement = 0
-	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + " ("+ str(changes[0]["funds"]) + ")" + "[/color]"
+	$Indicators.text += "[color=gold]" + tr("TRFUNDS") + " - " + str(snapped(World.current_enterprise.funds, 0.1)) + " ("+ str(snapped(changes[0]["funds"], 0.1)) + ")" + "[/color]"
 	$Indicators.text += "[color=blue] \n" + tr("TRMPOWER") + " - " + str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement) + " ("+ str(changes[0]["manpower_requirements"]) + ")" +  "[/color]"
 	$Indicators.text += "[color=green] \n" + tr("TRENV") + " - " + str(World.current_enterprise.environmental) + " ("+tr("TRWILLBE") +" "+ str(changes[1]["environmental"]) + ")" + "[/color]"
 	$Indicators.text += "[color=cyan] \n" + tr("TRSOC") + " - " + str(World.current_enterprise.social) + " ("+ str(changes[0]["social"]) + ")" + "[/color]"

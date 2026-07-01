@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Event" format=3 uid="uid://u5xmujeficmc"]
+
+[ext_resource type="Texture2D" uid="uid://bruacjkeybch2" path="res://Images/Events/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg" id="1_dwigu"]
+[ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_qpr5m"]
+
+[resource]
+script = ExtResource("2_qpr5m")
+event_name = "TRFINE"
+image_path = "uid://bruacjkeybch2"
+image = ExtResource("1_dwigu")
+description = "TRFINED"
+family = "FINE"
+effects = Array[String](["funds - 2500"])
+conditions = Array[String](["environmental < -300", "RAND = 5"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"

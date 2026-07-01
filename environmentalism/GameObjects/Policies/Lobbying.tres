@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Policy" format=3 uid="uid://co5vvser20048"]
+
+[ext_resource type="Texture2D" uid="uid://bh5l10ds2l6b5" path="res://Images/Policies/pexels-bia-limova-1908542654-33175650.jpg" id="1_mdqmx"]
+[ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_bguf0"]
+
+[resource]
+script = ExtResource("2_bguf0")
+policy_name = "TRLOBBYING"
+image_path = "uid://bh5l10ds2l6b5"
+image = ExtResource("1_mdqmx")
+cost = 1250.0
+effects = Array[String](["funds +* 0.2", "governance -* 0.3", "governance +* -0.1"])
+metadata/_custom_type_script = "uid://dixhvcvxrvqec"

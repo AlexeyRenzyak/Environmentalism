@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://hl2mn5narpgf"]
+
+[ext_resource type="Texture2D" uid="uid://bjlxq3g50g0qn" path="res://Images/Buildings/maciej-drazkiewicz-FjagHmZAq38-unsplash.jpg" id="1_xc7q6"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_bnn0m"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_26dd6"]
+
+[sub_resource type="Resource" id="Resource_bnn0m"]
+script = ExtResource("3_26dd6")
+upgrade_name = "TRZEROWASTE"
+cost = 300.0
+effects = Array[String](["environmental + 15", "funds - 20"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_26dd6"]
+script = ExtResource("3_26dd6")
+upgrade_name = "TRMANAGEMENTTRAINING"
+cost = 500.0
+effects = Array[String](["governance + 50", "funds - 50"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_bnn0m")
+building_name = "TRWELFARECENTER"
+image_path = "uid://bjlxq3g50g0qn"
+image = ExtResource("1_xc7q6")
+cost = 800.0
+manpower_requirement = 100
+base_construction_time = 4
+effects = Array[String](["social + 100", "governance - 30", "environmental - 30", "funds - 20"])
+upgrades = Array[ExtResource("3_26dd6")]([SubResource("Resource_bnn0m"), SubResource("Resource_26dd6")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

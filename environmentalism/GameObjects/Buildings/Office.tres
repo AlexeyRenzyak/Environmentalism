@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://b71woj1w2rk78"]
+
+[ext_resource type="Texture2D" uid="uid://e8arc8nurq1w" path="res://Images/Buildings/harry-shelton-pPxhM0CRzl4-unsplash.jpg" id="1_om7ry"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_8k0nv"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_1btq6"]
+
+[sub_resource type="Resource" id="Resource_8k0nv"]
+script = ExtResource("3_1btq6")
+upgrade_name = "TRREMOTEWORK"
+cost = 400.0
+effects = Array[String](["social + 70", "governance - 20"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_1btq6"]
+script = ExtResource("3_1btq6")
+upgrade_name = "TRWASTESORTING"
+cost = 1000.0
+effects = Array[String](["governance - 20", "environmental + 40"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_jb3te"]
+script = ExtResource("3_1btq6")
+upgrade_name = "TROUTSOURCING"
+cost = 600.0
+effects = Array[String](["governance - 100", "funds + 250"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_8k0nv")
+building_name = "TROFFICE"
+image_path = "uid://e8arc8nurq1w"
+image = ExtResource("1_om7ry")
+cost = 1200.0
+manpower_requirement = 200
+base_construction_time = 4
+effects = Array[String](["funds + 100", "governance + 350", "environmental - 50", "social - 120"])
+upgrades = Array[ExtResource("3_1btq6")]([SubResource("Resource_8k0nv"), SubResource("Resource_1btq6"), SubResource("Resource_jb3te")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

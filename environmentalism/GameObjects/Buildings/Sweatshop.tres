@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://cgoqt1fvwo0t1"]
+
+[ext_resource type="Texture2D" uid="uid://dlgoervn0hhy" path="res://Images/Buildings/pexels-equalstock-31019572.jpg" id="1_efs4w"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_a3ovh"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_21c6f"]
+
+[sub_resource type="Resource" id="Resource_efs4w"]
+script = ExtResource("3_21c6f")
+upgrade_name = "TRBASICAUTOMATION"
+cost = 600.0
+effects = Array[String](["social + 100", "funds - 50"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_a3ovh"]
+script = ExtResource("3_21c6f")
+upgrade_name = "TREXPANSION"
+cost = 500.0
+effects = Array[String](["social - 50", "environmental - 20", "funds + 100"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_a3ovh")
+building_name = "TRSWEATSHOP"
+image_path = "uid://dlgoervn0hhy"
+image = ExtResource("1_efs4w")
+cost = 600.0
+manpower_requirement = 250
+base_construction_time = 6
+effects = Array[String](["funds + 600", "governance - 150", "environmental - 75", "social - 250"])
+upgrades = Array[ExtResource("3_21c6f")]([SubResource("Resource_efs4w"), SubResource("Resource_a3ovh")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

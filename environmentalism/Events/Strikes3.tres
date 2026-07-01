@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Event" format=3 uid="uid://cg3j3d1l0yaf"]
+
+[ext_resource type="Texture2D" uid="uid://bdkhn3ach6ib8" path="res://Images/Events/claudio-schwarz-gWTRInY5AAc-unsplash.jpg" id="1_0n4d5"]
+[ext_resource type="Script" uid="uid://cveydjdjl1j67" path="res://EntityTemplates/Event.gd" id="2_q8mio"]
+
+[resource]
+script = ExtResource("2_q8mio")
+event_name = "TRSTRIKES3"
+image_path = "uid://bdkhn3ach6ib8"
+image = ExtResource("1_0n4d5")
+description = "TRSTRIKES3D"
+family = "STRIKES"
+effects = Array[String](["social + 1000", "funds - 10000"])
+conditions = Array[String](["manpower > 0", "social < 2000", "RAND = 5"])
+may_apply_tier_down = false
+metadata/_custom_type_script = "uid://cveydjdjl1j67"

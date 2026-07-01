@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="Building" format=3 uid="uid://bp07rgjhavkca"]
+
+[ext_resource type="Texture2D" uid="uid://lh7u1pd38ch2" path="res://Images/Buildings/homa-appliances-pWUyHVJgLhg-unsplash.jpg" id="1_h8x5b"]
+[ext_resource type="Script" uid="uid://c2c7day2rt4xc" path="res://EntityTemplates/Building.gd" id="2_5kd1x"]
+[ext_resource type="Script" uid="uid://c5bdne40m38j2" path="res://EntityTemplates/Upgrade.gd" id="3_v4btb"]
+
+[sub_resource type="Resource" id="Resource_h8x5b"]
+script = ExtResource("3_v4btb")
+upgrade_name = "TRCLOSEDCYCLE"
+cost = 1200.0
+effects = Array[String](["environmental + 40", "funds + 100", "governance - 100"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[sub_resource type="Resource" id="Resource_5kd1x"]
+script = ExtResource("3_v4btb")
+upgrade_name = "TRFULLAUTOMATION"
+cost = 1500.0
+effects = Array[String](["funds - 75", "governance + 150"])
+metadata/_custom_type_script = "uid://c5bdne40m38j2"
+
+[resource]
+script = ExtResource("2_5kd1x")
+building_name = "TRMODERNFACTORY"
+image_path = "uid://lh7u1pd38ch2"
+image = ExtResource("1_h8x5b")
+cost = 1500.0
+manpower_requirement = 150
+base_construction_time = 8
+effects = Array[String](["funds + 500", "governance - 300", "environmental - 40"])
+upgrades = Array[ExtResource("3_v4btb")]([SubResource("Resource_h8x5b"), SubResource("Resource_5kd1x")])
+metadata/_custom_type_script = "uid://c2c7day2rt4xc"

@@ -33,7 +33,58 @@ TRUPKEEP,Upkeep,Содержание
 TRPOSITIVE,Positive Modifiers,Положительные модификаторы
 TRNEGATIVE,Negative Modifiers,Негативные модификаторы
 TRTURNS,Turn(s),Ход(ов)
-TRCOMPANYNAME,Your Company's Name,Имя Вашей компании
-TRYOURCOMPANYNAME,Enter Your Company's Name,Введите имя Вашей компании
+TRCOMPANYNAME,Your Company's Name,Название Вашей компании
+TRYOURCOMPANYNAME,Enter Your Company's Name,Введите название Вашей компании
 TRSTART,Start,Начать
 TRQUIT,Quit Game,Покинуть игру
+TRGAMEOVER,Game Over,Конец игры
+TRECOSYSTEMEND,"Sadly, there are no more people to buy your products or use your services. The ruthless exploitation of natural resources and environment by your company resulted in mass extinctions, including that of the humankind. But there is always next time to try...","К сожалению, не осталось больше людей, которые могли бы купить Вашу продукцию или воспользоваться Вашими услугами. Безжалостное злоупотребление природными ресурсами и окружающей средой привело к массовым вымираниям, включая и человеческое. Тем не менее, всегда можно попробовать еще раз..."
+TRFUNDSEND,"The poor financial management resulted in bankruptcy of your company. Let's hope that it, or at least its assets, will see a brighter future under a new management. But you can always try again!","Плохое руководство финансами привело к банкротству Вашей компании. Понадеемся, что она, или хотя бы ее активы, найдут более светлое будущее уже под новым управлением. Однако Вы всегда можете попробовать снова!"
+TRCARBONCAPTURE,Carbon Capture,Захват углерода
+TRNEWPOWERBLOCK,New Power Block,Новый энергоблок
+TREXTENDEDSHIFTS,Extended Shifts,Расширенные смены
+TRMANDATORYSORTING,Mandatory Waste Sorting,Обязательная сортировка мусора
+TROFFICE,Office,Офис
+TRREMOTEWORK,Remote Work,Удаленная работа
+TROUTSOURCING,Outsourcing,Аутсорсинг
+TRWASTESORTING,Waste Sorting,Сортировка мусора
+TRSWEATSHOP,Sweatshop,Потогонная фабрика
+TRBASICAUTOMATION,Basic Automation,Базовая автоматизация
+TREXPANSION,Expansion,Расширение
+TRMODERNFACTORY,Modern Factory,Современный завод
+TRCLOSEDCYCLE,Closed Cycle,Закрытый цикл
+TRFULLAUTOMATION,Full Automation,Полная автоматизация
+TRSOLARPOWERPLANT,Solar Power Plant,Солнечная электростанция
+TRTRACKERS,Trackers,Система слежения
+TRADDITIONALARRAY,Additional Array,Новый массив
+TRWELFARECENTER,Welfare Center,Центр благосостояния
+TRZEROWASTE,Zero Waste,Политика без отходов
+TRMANAGEMENTTRAINING,Management Training,Тренировка управляющих
+TRRECYCLINGCENTER,Recycling Center,Центр переработки
+TREXTERNALWASTE,External Waste,Внешние отходы
+TRAUTOMATION,Automation,Автоматизация
+TREXCAVATIONSITE,Excavation Site,Место добычи
+TRSTRIPMINING,Strip Mining,Открытая добыча
+TRHEAVYMACHINERY,Heavy Machinery,Тяжелая техника
+TREMPLOYEEBENEFITS,Employee Benefits,Соцпакеты
+TRUNRESTRICTEDPROCUREMENT,Unrestricted Procurement,Снабжение без ограничений
+TRADMINISTRATIVEOUTSOURCING,Administrative Outsourcing,Аутсорсинг администрации
+TRLOBBYING,Lobbying,Лоббирование
+TRQUITTING1,Quittings,Увольнения
+TRQUITTING1D,"Some employees have resigned","Некоторые работники уволились"
+TRQUITTING2,Major Quittings,Значительные увольнения
+TRQUITTING2D,"A whole department has resigned","Целый отдел уволился"
+TRQUITTING3,Mass Quittings,Массовые увольнения
+TRQUITTING3D,"A lot of employees have resigned!","Множество работников уволилось!"
+TRSTRIKES1,Minor complaints,Мелкие жалобы
+TRSTRIKES1D,"Some employees complained about poor work conditions","Некоторые работники жалуются на плохие условия труда"
+TRSTRIKES2,Strike!,Забастовки!
+TRSTRIKES2D,"Many employees stopped working and joined a strike! Resources were spent to calm them down","Многие работники бросили свои обязанности и присоединились к забастовке! Были направлены ресурсы на то, чтобы успокоить их"
+TRSTRIKES3,Major Strike!,Массовые стачки!
+TRSTRIKES3D,"The whole company is paralyzed due to mass strikes!","Вся компания парализована волной массовых стачек!"
+TRFINE,A Fine!,Штраф!
+TRFINED,"The company was fined due to poor adherence to environment-friendly practices!","Компания была оштрафована за несоблюдение мер по защите окружающей среды!"
+TRSUBSIDY,A Subsidy!,Субсидия
+TRSUBSIDYD,"The company was rewarded with a governmental subsidy as a gratitude for our environment-friendly operations!","Правительство поощрило компанию субсидией в благодарность за учтивость к окружающей среде со стороны нашего бизнеса!"
+TRCORRUPTION,Corruption Scandal!,Коррупционный скандал!
+TRCORRUPTIOND,"Due to our lacking administrative capacity, corruption and criminal activities were conducted by some of our management behind our backs. Now, when they were discovered by an independent audit, we will need to spend a lot of money in a court...","Из-за наших посредственных административных возможностей, некоторые из наших руководителей смогли заниматься коррупционной и криминальной деятельностью за нашими спинами. Теперь, когда это вскрылось в ходе независимого аудита, нам придется потратить много денег в суде..."

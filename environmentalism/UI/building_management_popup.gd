@@ -11,7 +11,7 @@ func reload():
 		var i = upgrade.instantiate()
 		i.upgrade = x
 		$Upgrades.add_child(i)
-	$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
+	$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(snapped(World.current_enterprise.funds, 0.1)) + "[/color]"
 	$BuildingName.text = building.building_name
 	$EventImage.texture = building.image
 	$Effects.text = ""
@@ -19,7 +19,7 @@ func reload():
 	
 func _process(delta: float) -> void:
 	if visible:
-		$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(World.current_enterprise.funds) + "[/color]"
+		$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(snapped(World.current_enterprise.funds, 0.1))+ "[/color]"
 
 
 func write_effects():

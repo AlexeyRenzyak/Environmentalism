@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Policy" format=3 uid="uid://b2sgtpyy5017i"]
 
-[ext_resource type="Texture2D" uid="uid://cev1kkyqewie4" path="res://icon.svg" id="1_mtue3"]
+[ext_resource type="Texture2D" uid="uid://ceyi72q4eepmj" path="res://Images/Policies/pawel-czerwinski-RkIsyD_AVvc-unsplash.jpg" id="1_mtue3"]
 [ext_resource type="Script" uid="uid://dixhvcvxrvqec" path="res://EntityTemplates/Policy.gd" id="2_onh2y"]
 
 [resource]
 script = ExtResource("2_onh2y")
-policy_name = "Mandatory Waste Sorting"
-image_path = "uid://cev1kkyqewie4"
+policy_name = "TRMANDATORYSORTING"
+image_path = "uid://ceyi72q4eepmj"
 image = ExtResource("1_mtue3")
 cost = 750.0
-effects = Array[String](["environmental -* -0.2", "funds +* -0.3"])
+effects = Array[String](["environmental -* -0.20", "funds +* -0.3"])
 metadata/_custom_type_script = "uid://dixhvcvxrvqec"

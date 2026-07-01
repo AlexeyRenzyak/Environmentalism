@@ -3,10 +3,13 @@ extends Panel
 
 # Called when the node enters the scene tree for the first time.
 func reload():
-	$CurrentManpower.text = str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement)
+	var manpower_requirements = 0
+	for x in World.current_enterprise.buildings:
+		manpower_requirements += x.manpower_requirement
+	$CurrentManpower.text = str(World.current_enterprise.manpower)+"/"+str(World.current_enterprise.manpower_requirement) + " (" + str(manpower_requirements) + ")"
 	var price = 5 * (1.0+(int(((10000-World.current_enterprise.social)/1000))*0.2))
+	$Funds.text = "[color=gold]" + tr("TRFUNDS") + " - " + str(snapped(World.current_enterprise.funds, 0.1)) + "[/color]"
 	$Price.text = "[color=blue]" + "1 " + tr("TRMANPOWER") + "[/color]" + " = " + "[color=gold]" + str(price) + " " + tr("TRFUNDS") + "[/color]"
-
 
 #var envmod = 1.0-(int((10000-World.ecosystem)/2000)*0.2)
 
